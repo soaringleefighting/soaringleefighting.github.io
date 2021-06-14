@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>H.263&amp;H.263+标准研究总结 | 飞翔的个人博客</title>
+  <meta name="keywords" content=" Codecs , H263 ">
+  <meta name="description" content="H.263&amp;H.263+标准研究总结 | 飞翔的个人博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="CV Codecs Tools ImageProcessing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我的相册">
+<meta property="og:url" content="https://soaringleefighting.github.io/photo/index.html">
+<meta property="og:site_name" content="飞翔的个人博客">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://soaringleefighting.github.io/photo/IMG_4482.jpg">
+<meta property="og:updated_time" content="2021-06-14T04:13:44.625Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的相册">
+<meta name="twitter:image" content="https://soaringleefighting.github.io/photo/IMG_4482.jpg">
+
+
+<link rel="icon" href="/img/1_soaringlee_fighting.jpg">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1"></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value>
+  <input class="theme_blog_path" value>
+  <input id="theme_shortcut" value="true">
+  <input id="theme_highlight_on" value="true">
+  <input id="theme_code_copy" value="true">
+</div>
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/1_soaringlee_fighting.jpg" />
+</a>
+<div class="author">
+    <span>Soaring Lee</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/soaringleefighting" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="twitter" href="https://music.163.com/#/playlist?id=797834576" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/6622396175" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/8d35be99fa13" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="csdn" href="https://blog.csdn.net/SoaringLee_fighting" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:2963033731@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2963033731&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/playlist?id=797834576" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(135)</small></div></li>
+    
+        
+            
+            <li><div data-rel="技术"><i class="fold iconfont icon-right"></i>技术<small>(90)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="技术<--->Bugfix">Bugfix<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->Web">Web<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->优化">优化<small>(19)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->图像处理">图像处理<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->工程化">工程化<small>(17)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->开源项目">开源项目<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->数据结构">数据结构<small>(6)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->视频处理">视频处理<small>(15)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->编程语言">编程语言<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->编解码">编解码<small>(12)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(26)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="工具<--->Linux工具">Linux工具<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->多线程编程">多线程编程<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->编译工具">编译工具<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->自动化脚本">自动化脚本<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->调试工具">调试工具<small>(6)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="读书<--->书单">书单<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书<--->读书笔记">读书笔记<small>(5)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(10)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="生活<--->规划">规划<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="生活<--->随笔">随笔<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="生活<--->音乐">音乐<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="产品"><i class="fold iconfont icon-right"></i>产品<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="产品<--->视频会议">视频会议<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="135">
+<input type="hidden" id="yelog_site_word_count" value="159.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/listener51">小马哥博客</a></li>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/leixiaohua1020">雷霄骅(leixiaohua1020)的专栏</a></li>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/abcjennifer">Rachel Zhang的专栏</a></li>
+            
+            <li><a target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=797834576">我的网易云音乐</a></li>
+            
+            <li><a target="_blank" href="http://www.kugou.com/fmweb/html/index.html">我的酷狗音乐</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Android</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ARM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Books</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Bugs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Codec</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Codecs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Conda</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSConvert</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CV</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cygwin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Data Structure</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DSP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FFMPEG</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Gnu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>gprof</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>H263</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ios</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Life</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>makefile</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MinGW</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mount</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MPEG2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Plan</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReadingList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>sample</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SecureCRT</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Solaris</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Think</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Tools</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>valgrind</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Video</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Wasm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>windbg</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>X86</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>YUV</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>吉他</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>年终总结</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>批处理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>视频会议</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 读书 书单 "
+           href="/2021/02/13/【Books系列】2021年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2021年阅读书单">2021年阅读书单</span>
+            <span class="post-date" title="2021-02-13 13:13:47">2021/02/13</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 开源项目 "
+           href="/2020/09/06/【工程化系列】X86&ARM汇编模板AssemblySample/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86&amp;ARM汇编模板AssemblySample">X86&amp;ARM汇编模板AssemblySample</span>
+            <span class="post-date" title="2020-09-06 10:57:47">2020/09/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 编解码 "
+           href="/2020/07/06/【Codecs系列】H.263_H.263+标准研究总结/"
+           data-tag="Codecs,H263"
+           data-author="" >
+            <span class="post-title" title="H.263&amp;H.263+标准研究总结">H.263&amp;H.263+标准研究总结</span>
+            <span class="post-date" title="2020-07-06 15:13:47">2020/07/06</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 开源项目 "
+           href="/2020/06/22/【工程化系列】全平台编译模板MakefileSample/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="全平台编译模板MakefileSample">全平台编译模板MakefileSample</span>
+            <span class="post-date" title="2020-06-22 15:13:47">2020/06/22</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 书单 "
+           href="/2020/01/28/【Books系列】2020年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2020年阅读书单">2020年阅读书单</span>
+            <span class="post-date" title="2020-01-28 22:13:47">2020/01/28</span>
+        </a>
+        
+        <a id="top" class="全部文章 读书 书单 "
+           href="/2019/07/11/【Books系列】2019年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2019年阅读书单">2019年阅读书单</span>
+            <span class="post-date" title="2019-07-11 22:13:47">2019/07/11</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 图像处理 "
+           href="/2019/05/29/【CV系列】图像去噪算法研究（去噪+锐化）/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像去噪算法研究（去噪+锐化）">图像去噪算法研究（去噪+锐化）</span>
+            <span class="post-date" title="2019-05-29 22:13:47">2019/05/29</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 编解码 "
+           href="/2018/10/24/【Codecs系列】MPEG-2标准总结文档/"
+           data-tag="Codecs,MPEG2"
+           data-author="" >
+            <span class="post-title" title="MPEG-2标准总结文档">MPEG-2标准总结文档</span>
+            <span class="post-date" title="2018-10-24 15:13:47">2018/10/24</span>
+        </a>
+        
+        <a id="top" class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构32位汇编优化总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构32位汇编优化总结">ARM架构32位汇编优化总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/06/14/【Codecs系列】基于AI的编码Codec何时到来？/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="基于AI的编码Codec何时到来？">基于AI的编码Codec何时到来？</span>
+            <span class="post-date" title="2021-06-14 12:13:47">2021/06/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 Web "
+           href="/2021/06/08/【Web系列】WebAssembly(wasm)基础知识/"
+           data-tag="Wasm"
+           data-author="" >
+            <span class="post-title" title="WebAssembly(wasm)基础知识">WebAssembly(wasm)基础知识</span>
+            <span class="post-date" title="2021-06-08 10:00:47">2021/06/08</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2021/05/19/【ARM系列】arm neon intrinsic方式编写arm32位汇编/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="arm neon intrinsic方式编写arm32位汇编">arm neon intrinsic方式编写arm32位汇编</span>
+            <span class="post-date" title="2021-05-19 15:13:47">2021/05/19</span>
+        </a>
+        
+        <a  class="全部文章 产品 视频会议 "
+           href="/2021/03/20/【视频会议系列】亿联视频会议产品矩阵简介/"
+           data-tag="视频会议"
+           data-author="" >
+            <span class="post-title" title="亿联视频会议产品矩阵简介">亿联视频会议产品矩阵简介</span>
+            <span class="post-date" title="2021-03-20 13:13:47">2021/03/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/01/10/【Codecs系列】H.264参考帧队列管理机制：初始化、重排序和标记/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="H.264参考帧队列管理机制：初始化、重排序和标记">H.264参考帧队列管理机制：初始化、重排序和标记</span>
+            <span class="post-date" title="2021-01-10 15:13:47">2021/01/10</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/01/04/【Codecs系列】H.264时域SVC（SVC-T）编码技术/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="H.264时域SVC（SVC-T）编码技术">H.264时域SVC（SVC-T）编码技术</span>
+            <span class="post-date" title="2021-01-04 15:13:47">2021/01/04</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2021/01/03/【总结系列】2020年终总结/"
+           data-tag="年终总结"
+           data-author="" >
+            <span class="post-title" title="2020年终总结">2020年终总结</span>
+            <span class="post-date" title="2021-01-03 13:13:47">2021/01/03</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/12/28/【Tools系列】git rebase和git merge用法详解/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="git rebase和git merge用法详解">git rebase和git merge用法详解</span>
+            <span class="post-date" title="2020-12-28 22:00:47">2020/12/28</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/12/25/【Tools系列】在Win7系统上利用Simics安装Solaris 8 SPARC操作系统/"
+           data-tag="Solaris"
+           data-author="" >
+            <span class="post-title" title="在Win7系统上利用Simics安装Solaris 8 SPARC操作系统">在Win7系统上利用Simics安装Solaris 8 SPARC操作系统</span>
+            <span class="post-date" title="2020-12-25 22:00:47">2020/12/25</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2020/11/29/【Codecs系列】Socionext芯片SC2000系统架构简介/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="Socionext芯片SC2000系统架构简介">Socionext芯片SC2000系统架构简介</span>
+            <span class="post-date" title="2020-11-29 15:13:47">2020/11/29</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/10/23/【Tools系列】SecureCRT文件传输模式之Zmodem/"
+           data-tag="SecureCRT"
+           data-author="" >
+            <span class="post-title" title="SecureCRT文件传输模式之Zmodem">SecureCRT文件传输模式之Zmodem</span>
+            <span class="post-date" title="2020-10-23 22:00:47">2020/10/23</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/10/01/【优化系列】ARM优化之内联汇编（inline）优化方法/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM优化之内联汇编（inline）优化方法">ARM优化之内联汇编（inline）优化方法</span>
+            <span class="post-date" title="2020-10-01 20:07:17">2020/10/01</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/18/【优化系列】x86内联汇编demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="x86内联汇编demo">x86内联汇编demo</span>
+            <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/18/【优化系列】X86优化之GCC内联汇编/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之GCC内联汇编">X86优化之GCC内联汇编</span>
+            <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/16/【优化系列】ARM优化之Intrinsic汇编方法/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构优化之Intrinsic汇编方法">ARM架构优化之Intrinsic汇编方法</span>
+            <span class="post-date" title="2020-09-16 20:07:17">2020/09/16</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/05/【优化系列】X86优化之Intrinsic汇编方法/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之Intrinsic汇编方法">X86优化之Intrinsic汇编方法</span>
+            <span class="post-date" title="2020-09-05 20:07:17">2020/09/05</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/05/【优化系列】X86优化之Intrinsic汇编demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之Intrinsic汇编demo">X86优化之Intrinsic汇编demo</span>
+            <span class="post-date" title="2020-09-05 20:07:17">2020/09/05</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2020/08/16/【工程化系列】C语言编程规范/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言编程规范">C语言编程规范</span>
+            <span class="post-date" title="2020-08-16 15:13:47">2020/08/16</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2020/08/02/【工程化系列】linux下编译makefile将宏参数传递给C文件/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="linux下编译makefile将宏参数传递给C文件">linux下编译makefile将宏参数传递给C文件</span>
+            <span class="post-date" title="2020-08-02 15:13:47">2020/08/02</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2020/07/31/【C++系列】C++类中引用另一个类内的指针变量/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++类中引用另一个类内的指针变量">C++类中引用另一个类内的指针变量</span>
+            <span class="post-date" title="2020-07-31 15:13:47">2020/07/31</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2020/07/31/【CV系列】积分图算法/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="积分图算法">积分图算法</span>
+            <span class="post-date" title="2020-07-31 10:45:47">2020/07/31</span>
+        </a>
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2020/07/25/【Books系列】《亲爱的安德烈》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《亲爱的安德烈》读书笔记">《亲爱的安德烈》读书笔记</span>
+            <span class="post-date" title="2020-07-25 11:13:47">2020/07/25</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2020/07/24/【Tools系列】利用性能分析工具valgrind+KCachegrind分析/"
+           data-tag="valgrind"
+           data-author="" >
+            <span class="post-title" title="利用性能分析工具valgrind+KCachegrind分析">利用性能分析工具valgrind+KCachegrind分析</span>
+            <span class="post-date" title="2020-07-24 16:25:47">2020/07/24</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2020/07/19/【Python系列】使用VScode+Anaconda搭建舒服的Python环境/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="使用VScode+Anaconda搭建舒服的Python环境">使用VScode+Anaconda搭建舒服的Python环境</span>
+            <span class="post-date" title="2020-07-19 22:00:47">2020/07/19</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/07/11/【Tools系列】Git常用命令/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git常用命令">Git常用命令</span>
+            <span class="post-date" title="2020-07-11 22:00:47">2020/07/11</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2020/07/11/【Tools系列】gitalk评论报错Error_Validation_Failed/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="gitalk评论报错Error_Validation_Failed">gitalk评论报错Error_Validation_Failed</span>
+            <span class="post-date" title="2020-07-11 14:45:47">2020/07/11</span>
+        </a>
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2020/07/07/【工程化系列】CSConvertKit&YUVProcessKit/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="CSConvertKit&amp;YUVProcessKit">CSConvertKit&amp;YUVProcessKit</span>
+            <span class="post-date" title="2020-07-07 15:13:47">2020/07/07</span>
+        </a>
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2020/07/07/【工程化系列】编解码一致性和性能测试脚本autoCodecTest/"
+           data-tag="Codec"
+           data-author="" >
+            <span class="post-title" title="编解码一致性和性能测试脚本autoCodecTest">编解码一致性和性能测试脚本autoCodecTest</span>
+            <span class="post-date" title="2020-07-07 15:13:47">2020/07/07</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/06/13/【优化系列】x86asm汇编优化demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86ASM汇编优化demo">X86ASM汇编优化demo</span>
+            <span class="post-date" title="2020-06-13 20:07:17">2020/06/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/28/【数据结构系列】查找算法及其实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="查找算法及其实现">查找算法及其实现</span>
+            <span class="post-date" title="2020-04-28 22:00:00">2020/04/28</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/21/【数据结构系列】队列的基本操作及实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="队列的基本操作及实现">队列的基本操作及实现</span>
+            <span class="post-date" title="2020-04-21 22:00:00">2020/04/21</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/21/【数据结构系列】栈的基本操作及实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="栈的基本操作及实现">栈的基本操作及实现</span>
+            <span class="post-date" title="2020-04-21 20:33:17">2020/04/21</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/18/【数据结构系列】编程之美：求子数组的最大和/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="编程之美：求子数组的最大和">编程之美：求子数组的最大和</span>
+            <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/18/【数据结构系列】线性表的顺序存储结构的基本操作/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="线性表的顺序存储结构的基本操作">线性表的顺序存储结构的基本操作</span>
+            <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/14/【数据结构系列】单链表的基本操作/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="单链表的基本操作">单链表的基本操作</span>
+            <span class="post-date" title="2020-04-14 20:33:17">2020/04/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 Bugfix "
+           href="/2020/03/14/【Bugfix系列】一个int变量引起的随机数异常问题/"
+           data-tag="Bugs"
+           data-author="" >
+            <span class="post-title" title="一个int变量引起的随机数异常问题">一个int变量引起的随机数异常问题</span>
+            <span class="post-date" title="2020-03-14 20:07:17">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/02/17/【优化系列】X86优化之纯汇编优化方法/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之纯汇编优化方法">X86优化之纯汇编优化方法</span>
+            <span class="post-date" title="2020-02-17 20:07:17">2020/02/17</span>
+        </a>
+        
+        <a  class="全部文章 生活 随笔 "
+           href="/2020/02/17/【Life系列】一个人最好的生活状态/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="一个人最好的生活状态">一个人最好的生活状态</span>
+            <span class="post-date" title="2020-02-17 15:13:47">2020/02/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2020/02/08/【Scripts系列】makefile中_-_符号和_@_符号的使用/"
+           data-tag="makefile,Tools"
+           data-author="" >
+            <span class="post-title" title="makefile中_-_符号和_@_符号的使用">makefile中_-_符号和_@_符号的使用</span>
+            <span class="post-date" title="2020-02-08 20:01:47">2020/02/08</span>
+        </a>
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2020/01/28/【Books系列】《月童度河》摘抄及读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《月童度河》摘抄及读书笔记">《月童度河》摘抄及读书笔记</span>
+            <span class="post-date" title="2020-01-28 15:13:47">2020/01/28</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/11/20/【Life系列】济南 VS. 合肥 综合调研报告/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="济南 VS. 合肥 综合调研报告">济南 VS. 合肥 综合调研报告</span>
+            <span class="post-date" title="2019-11-20 15:13:47">2019/11/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/11/06/【OpenCV系列】通过OpenCV读取并显示YUV视频文件/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="通过OpenCV读取并显示YUV视频文件">通过OpenCV读取并显示YUV视频文件</span>
+            <span class="post-date" title="2019-11-06 10:45:47">2019/11/06</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2019/10/20/【Codecs系列】AMBA CV22芯片知识总结系列/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="AMBA CV22芯片知识总结系列">AMBA CV22芯片知识总结系列</span>
+            <span class="post-date" title="2019-10-20 15:13:47">2019/10/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/10/20/【CV系列】图像去雾技术研究/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像去雾技术研究">图像去雾技术研究</span>
+            <span class="post-date" title="2019-10-20 10:45:47">2019/10/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/10/19/【Codecs系列】颜色空间转换CSConvert：YUV420P转MonoY/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420P转MonoY">颜色空间转换CSConvert：YUV420P转MonoY</span>
+            <span class="post-date" title="2019-10-19 22:13:47">2019/10/19</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/09/15/【Think系列】关于变化与成长的小思考/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="关于变化与成长的小思考">关于变化与成长的小思考</span>
+            <span class="post-date" title="2019-09-15 22:00:47">2019/09/15</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/15/【Linux系列】select()函数的用法及实例/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="select()函数的用法及实例">select()函数的用法及实例</span>
+            <span class="post-date" title="2019-09-15 15:13:47">2019/09/15</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/14/【Linux系列】Linux设备驱动之Ioctl控制/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux设备驱动之Ioctl控制">Linux设备驱动之Ioctl控制</span>
+            <span class="post-date" title="2019-09-14 15:13:47">2019/09/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2019/09/13/【ARM系列】ARM架构中断异常处理机制/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构中断异常处理机制">ARM架构中断异常处理机制</span>
+            <span class="post-date" title="2019-09-13 10:45:47">2019/09/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/07/【PE系列】命令行参数解析的两种方法/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="命令行参数解析的两种方法">命令行参数解析的两种方法</span>
+            <span class="post-date" title="2019-09-07 15:13:47">2019/09/07</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/09/01/【Codecs系列】颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)">颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)</span>
+            <span class="post-date" title="2019-09-01 21:45:47">2019/09/01</span>
+        </a>
+        
+        <a  class="全部文章 工具 多线程编程 "
+           href="/2019/08/25/【Tools系列】多线程中如何进行参数传递？/"
+           data-tag="Tools"
+           data-author="" >
+            <span class="post-title" title="多线程中如何进行参数传递？">多线程中如何进行参数传递？</span>
+            <span class="post-date" title="2019-08-25 15:13:47">2019/08/25</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/08/11/【CV系列】在同一窗口显示多幅图片/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="OpenCV中在同一窗口显示多幅图片">OpenCV中在同一窗口显示多幅图片</span>
+            <span class="post-date" title="2019-08-11 10:45:47">2019/08/11</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/08/10/【Think系列】技术发展之路——专业能力/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="技术发展之路---专业能力">技术发展之路---专业能力</span>
+            <span class="post-date" title="2019-08-10 15:13:47">2019/08/10</span>
+        </a>
+        
+        <a  class="全部文章 生活 音乐 "
+           href="/2019/08/08/【音乐系列】吉他学习入门基本知识/"
+           data-tag="吉他"
+           data-author="" >
+            <span class="post-title" title="吉他学习入门基本知识">吉他学习入门基本知识</span>
+            <span class="post-date" title="2019-08-08 10:45:47">2019/08/08</span>
+        </a>
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2019/08/04/【开源项目】Python+Qt实现简单的视频监控界面/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python+Qt实现简单的视频监控界面">Python+Qt实现简单的视频监控界面</span>
+            <span class="post-date" title="2019-08-04 15:13:47">2019/08/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2019/07/27/【Tools系列】Conda安装和使用方法/"
+           data-tag="Conda"
+           data-author="" >
+            <span class="post-title" title="Conda安装和使用方法">Conda安装和使用方法</span>
+            <span class="post-date" title="2019-07-27 10:45:47">2019/07/27</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2019/07/14/【Tools系列】Git使用方法/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git使用方法">Git使用方法</span>
+            <span class="post-date" title="2019-07-14 10:45:47">2019/07/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：YUV420转YUV444/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420转YUV444">颜色空间转换CSConvert：YUV420转YUV444</span>
+            <span class="post-date" title="2019-07-13 21:45:47">2019/07/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV">颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV</span>
+            <span class="post-date" title="2019-07-13 21:40:47">2019/07/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21/"
+           data-tag="Codecs,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21">颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21</span>
+            <span class="post-date" title="2019-07-13 21:40:47">2019/07/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换">颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换</span>
+            <span class="post-date" title="2019-07-13 21:34:47">2019/07/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：YUV420P(I420)转NV12/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420P(I420)转NV12">颜色空间转换CSConvert：YUV420P(I420)转NV12</span>
+            <span class="post-date" title="2019-07-13 21:23:47">2019/07/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/12/【Codecs系列】关于颜色空间转换的一个思考/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="关于颜色空间转换的一个思考">关于颜色空间转换的一个思考</span>
+            <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/12/【Codecs系列】颜色空间转换CSConvert：RGB24转YUV420P/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：RGB24转YUV420">颜色空间转换CSConvert：RGB24转YUV420</span>
+            <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/07/08/【CV系列】图像直方图均衡化原理和算法实现/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像直方图均衡化原理和算法实现">图像直方图均衡化原理和算法实现</span>
+            <span class="post-date" title="2019-07-08 10:45:47">2019/07/08</span>
+        </a>
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/06/29/【Books系列】2019年第三本书：《新物种爆炸》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《新物种爆炸》读书笔记">《新物种爆炸》读书笔记</span>
+            <span class="post-date" title="2019-06-29 15:13:47">2019/06/29</span>
+        </a>
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/06/22/【Books系列】2019年第二本书：大冰《我不》读书笔记和读后感/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="大冰《我不》读书笔记和读后感">大冰《我不》读书笔记和读后感</span>
+            <span class="post-date" title="2019-06-22 15:13:47">2019/06/22</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/06/02/【Think系列】工作两年的总结和思考20190602/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业两年的总结和思考20190602">毕业两年的总结和思考20190602</span>
+            <span class="post-date" title="2019-06-02 15:13:47">2019/06/02</span>
+        </a>
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/05/22/【CV系列】图像低照度增强算法研究/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像低照度增强算法研究">图像低照度增强算法研究</span>
+            <span class="post-date" title="2019-05-22 10:45:47">2019/05/22</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2019/05/13/【C系列】C工程中灵活的参数解析方式/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C工程中灵活的参数解析方式">C工程中灵活的参数解析方式</span>
+            <span class="post-date" title="2019-05-13 15:13:47">2019/05/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2019/03/18/【Tools系列】不同系统文件共享(挂载)方法/"
+           data-tag="mount"
+           data-author="" >
+            <span class="post-title" title="不同系统文件共享(挂载)方法">不同系统文件共享(挂载)方法</span>
+            <span class="post-date" title="2019-03-18 10:45:47">2019/03/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/03/05/【PE系列】之跨平台统一时间函数SDK及用法/"
+           data-tag="sample"
+           data-author="" >
+            <span class="post-title" title="跨平台统一时间函数SDK及用法">跨平台统一时间函数SDK及用法</span>
+            <span class="post-date" title="2019-03-05 21:45:47">2019/03/05</span>
+        </a>
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/02/10/【Books系列】2019年第一本书：大冰《好吗好的》读书笔记和读后感/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="大冰《好吗好的》读书笔记和读后感">大冰《好吗好的》读书笔记和读后感</span>
+            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
+        </a>
+        
+        <a  class="全部文章 生活 随笔 "
+           href="/2019/02/10/【Life系列】我奋斗了18年才和你坐在一起喝咖啡/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="我奋斗了18年才和你坐在一起喝咖啡">我奋斗了18年才和你坐在一起喝咖啡</span>
+            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2019/01/02/【HISI系列】之SDK编码器开发框架与海思媒体处理平台架构/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="SDK编码器开发框架与海思媒体处理平台架构">SDK编码器开发框架与海思媒体处理平台架构</span>
+            <span class="post-date" title="2019-01-02 15:13:47">2019/01/02</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/12/25/【Python系列】Python程序变成可执行程序的方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python程序变成可执行程序的方法">Python程序变成可执行程序的方法</span>
+            <span class="post-date" title="2018-12-25 15:13:47">2018/12/25</span>
+        </a>
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/12/21/【编译工具】Cygwin的使用方法和编译/"
+           data-tag="cygwin"
+           data-author="" >
+            <span class="post-title" title="Cygwin的使用方法和编译">Cygwin的使用方法和编译</span>
+            <span class="post-date" title="2018-12-21 10:45:47">2018/12/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/12/21/【编译工具】MinGW的使用方法和编译/"
+           data-tag="MinGW"
+           data-author="" >
+            <span class="post-title" title="MinGW的使用方法和编译">MinGW的使用方法和编译</span>
+            <span class="post-date" title="2018-12-21 10:45:47">2018/12/21</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/12/10/【PE系列】搭建支持C99源代码编译的vs2010工程的方法/"
+           data-tag="C,makefile"
+           data-author="" >
+            <span class="post-title" title="搭建支持C99源代码编译的vs2010工程的方法(附MinGW下Windows GNU makefile的编写)">搭建支持C99源代码编译的vs2010工程的方法(附MinGW下Windows GNU makefile的编写)</span>
+            <span class="post-date" title="2018-12-10 15:13:47">2018/12/10</span>
+        </a>
+        
+        <a  class="全部文章 工具 Linux工具 "
+           href="/2018/12/08/【Tools系列】vim编辑器快捷键使用方法/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="vim编辑器快捷键使用方法">vim编辑器快捷键使用方法</span>
+            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2018/12/08/【Tools系列】hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
+        </a>
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2018/11/29/【Tools系列】Linux平台静-动态库中强符号修改工具/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="Linux平台静-动态库中强符号修改工具">Linux平台静-动态库中强符号修改工具</span>
+            <span class="post-date" title="2018-11-29 15:13:47">2018/11/29</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/20/【PE系列】Visual Studio自定义生成工具配置方法和相关vs系统变量含义/"
+           data-tag="VS"
+           data-author="" >
+            <span class="post-title" title="VS自定义生成工具配置方法和相关VS系统变量含义">VS自定义生成工具配置方法和相关VS系统变量含义</span>
+            <span class="post-date" title="2018-11-20 21:45:47">2018/11/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/11/14/【ARM系列】ARM交叉编译工具链和编译浮点选项使用说明/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM交叉编译工具链和编译浮点选项使用说明">ARM交叉编译工具链和编译浮点选项使用说明</span>
+            <span class="post-date" title="2018-11-14 10:45:47">2018/11/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台通用编译模板/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台通用编译模板">Android平台通用编译模板</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台编译makefile编写规则/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台编译makefile编写规则">Android平台编译makefile编写规则</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台通用编译环境/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台通用编译环境">Android平台通用编译环境</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/11/11/【Codecs系列】FFmpeg中mpeg2编解码器的提取和编译测试/"
+           data-tag="Codecs,FFMPEG"
+           data-author="" >
+            <span class="post-title" title="FFmpeg开源代码提取方法（附mpeg2编解码器提取）">FFmpeg开源代码提取方法（附mpeg2编解码器提取）</span>
+            <span class="post-date" title="2018-11-11 21:13:47">2018/11/11</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2018/11/11/【Think系列】对于现在工作的思考20181111/"
+           data-tag="Think,Plan"
+           data-author="" >
+            <span class="post-title" title="对于现在工作的思考--20181111">对于现在工作的思考--20181111</span>
+            <span class="post-date" title="2018-11-11 15:13:47">2018/11/11</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/11/03/【Codecs系列】视频编解码标准梳理框架和要点分析/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="视频编解码标准梳理框架和要点分析">视频编解码标准梳理框架和要点分析</span>
+            <span class="post-date" title="2018-11-03 15:13:47">2018/11/03</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/27/【ios】xcode工程建立和配置（ios真机测试方法）/"
+           data-tag="ios"
+           data-author="" >
+            <span class="post-title" title="xcode工程建立和配置（ios真机测试方法）">xcode工程建立和配置（ios真机测试方法）</span>
+            <span class="post-date" title="2018-09-27 21:45:47">2018/09/27</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/26/【PE系列】mac和ios通用编译环境/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="mac和ios通用编译环境">mac和ios通用编译环境</span>
+            <span class="post-date" title="2018-09-26 21:45:47">2018/09/26</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/09/20/【Codecs系列】FFMPEG 命令行常用方法示例（含yuv处理命令）/"
+           data-tag="Codecs,FFMPEG"
+           data-author="" >
+            <span class="post-title" title="FFMPEG 命令行常用方法示例（含yuv处理命令）">FFMPEG 命令行常用方法示例（含yuv处理命令）</span>
+            <span class="post-date" title="2018-09-20 21:13:47">2018/09/20</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/10/【PE系列】makefile工程编译模板/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="makefile工程编译模板">makefile工程编译模板</span>
+            <span class="post-date" title="2018-09-10 21:45:47">2018/09/10</span>
+        </a>
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2018/09/07/【Codecs系列】编解码器性能测试自动化脚本/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="编解码器一致性验证和性能测试自动化脚本">编解码器一致性验证和性能测试自动化脚本</span>
+            <span class="post-date" title="2018-09-07 15:13:47">2018/09/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2018/09/04/【Tools系列】Performance Profile Tools——perf and gprof/"
+           data-tag="gprof"
+           data-author="" >
+            <span class="post-title" title="Performance Profile Tools——perf and gprof">Performance Profile Tools——perf and gprof</span>
+            <span class="post-date" title="2018-09-04 10:45:47">2018/09/04</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2018/08/31/【Tools系列】GDB调试方法/"
+           data-tag="GDB"
+           data-author="" >
+            <span class="post-title" title="GDB调试方法">GDB调试方法</span>
+            <span class="post-date" title="2018-08-31 10:45:47">2018/08/31</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/08/25/【PE系列】CPU进程绑定技术（指定当前运行的CPU核）/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="CPU进程绑定技术（指定当前运行的CPU核）">CPU进程绑定技术（指定当前运行的CPU核）</span>
+            <span class="post-date" title="2018-08-25 15:13:47">2018/08/25</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】Some ways of Migrating code from ARM32 to AArch64/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="Some ways of Migrating code from ARM32 to AArch64">Some ways of Migrating code from ARM32 to AArch64</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】ARM汇编优化常见问题汇总/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM汇编优化常见问题汇总">ARM汇编优化常见问题汇总</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】Thumb状态分析以及ARM与Thumb之间的状态转换/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM与Thumb之间的状态转换">ARM与Thumb之间的状态转换</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm32位和arm64位架构、寄存器和指令差异分析总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="arm32位和arm64位架构、寄存器和指令差异分析总结">arm32位和arm64位架构、寄存器和指令差异分析总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构64位（AArch64）汇编优化总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构64位(AArch64)汇编优化总结">ARM架构64位(AArch64)汇编优化总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册">ARM架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2018/08/05/【Think系列】毕业一年的总结和思考20180805/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业一年的总结和思考20180805">毕业一年的总结和思考20180805</span>
+            <span class="post-date" title="2018-08-05 15:13:47">2018/08/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2018/07/28/【Tools系列】使用xstart远程连接linux图形用户界面/"
+           data-tag="linux,Tools"
+           data-author="" >
+            <span class="post-title" title="使用xstart远程连接linux图形用户界面以及rxvt终端配置">使用xstart远程连接linux图形用户界面以及rxvt终端配置</span>
+            <span class="post-date" title="2018-07-28 15:13:47">2018/07/28</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/07/12/【Codecs系列】颜色空间转换CSconvert：YUV420PtoRGB24/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSconvert：YUV420PtoRGB24">颜色空间转换CSconvert：YUV420PtoRGB24</span>
+            <span class="post-date" title="2018-07-12 22:13:47">2018/07/12</span>
+        </a>
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/06/22/【Tools系列】GnuWin32使用以及windows下gnu makefile编写/"
+           data-tag="makefile,Tools,Gnu"
+           data-author="" >
+            <span class="post-title" title="GnuWin32使用以及windows下gnu makefile编写">GnuWin32使用以及windows下gnu makefile编写</span>
+            <span class="post-date" title="2018-06-22 15:13:47">2018/06/22</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/06/04/【Codecs系列】YUV处理工具：图像水平拼接/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：图像水平拼接">YUV处理工具：图像水平拼接</span>
+            <span class="post-date" title="2018-06-04 15:13:47">2018/06/04</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/29/【Codecs系列】YUV处理工具：文件剪切功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件剪切">YUV处理工具：文件剪切</span>
+            <span class="post-date" title="2018-05-29 15:13:47">2018/05/29</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/28/【Codecs系列】YUV处理工具：文件分割和帧率扩倍功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件分割和帧率扩倍功能">YUV处理工具：文件分割和帧率扩倍功能</span>
+            <span class="post-date" title="2018-05-28 21:13:47">2018/05/28</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/28/【Codecs系列】YUV处理工具：文件拼接功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件拼接">YUV处理工具：文件拼接</span>
+            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
+        </a>
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/05/28/【Codecs系列】视频编码中的块效应、振铃效应和呼吸效应分析/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="视频编码中的块效应、振铃效应和呼吸效应分析">视频编码中的块效应、振铃效应和呼吸效应分析</span>
+            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
+        </a>
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/21/【Codecs系列】YUV处理工具：文件比较功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件比较功能">YUV处理工具：文件比较功能</span>
+            <span class="post-date" title="2018-05-21 21:13:47">2018/05/21</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/14/【C系列】两种结构体成员初始化方式：顺序和乱序/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中两种结构体成员初始化方式：顺序和乱序">C语言中两种结构体成员初始化方式：顺序和乱序</span>
+            <span class="post-date" title="2018-05-14 15:13:47">2018/05/14</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/08/【Python系列】Python中执行可执行文件的四种方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python中执行可执行文件的四种方法">Python中执行可执行文件的四种方法</span>
+            <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
+        </a>
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/08/【Python系列】Python中获取当前目录和子目录下所有文件或指定文件的方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python中获取当前目录和子目录下所有文件或指定文件的方法">Python中获取当前目录和子目录下所有文件或指定文件的方法</span>
+            <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
+        </a>
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/02/18/【优化系列】之DSP优化方法/"
+           data-tag="DSP"
+           data-author="" >
+            <span class="post-title" title="DSP通用优化方法">DSP通用优化方法</span>
+            <span class="post-date" title="2018-02-18 15:13:47">2018/02/18</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/10/15/【Tools系列】Valgrind工具检测内存错误实例分析/"
+           data-tag="valgrind"
+           data-author="" >
+            <span class="post-title" title="Valgrind工具检测内存错误实例分析">Valgrind工具检测内存错误实例分析</span>
+            <span class="post-date" title="2017-10-15 21:45:47">2017/10/15</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/10/09/【Tools系列】Windows平台下内存泄露分析工具：WinDbg/"
+           data-tag="windbg"
+           data-author="" >
+            <span class="post-title" title="Windows平台下内存泄露分析工具：WinDbg">Windows平台下内存泄露分析工具：WinDbg</span>
+            <span class="post-date" title="2017-10-09 10:45:47">2017/10/09</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2017/09/25/【PE系列】通过批处理脚本命令行编译VS工程/"
+           data-tag="批处理"
+           data-author="" >
+            <span class="post-title" title="通过批处理脚本命令行编译VS工程">通过批处理脚本命令行编译VS工程</span>
+            <span class="post-date" title="2017-09-25 15:13:47">2017/09/25</span>
+        </a>
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/09/24/【PE系列】查看dll导出的符号的方法以及Depends.exe反汇编工具介绍/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="查看dll导出的符号的方法以及Depends.exe反汇编工具介绍">查看dll导出的符号的方法以及Depends.exe反汇编工具介绍</span>
+            <span class="post-date" title="2017-09-24 15:13:47">2017/09/24</span>
+        </a>
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2017/09/22/【PE系列】Windows平台下为可执行文件或动态库dll添加版本信息和图标/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="Windows平台下为可执行文件或动态库dll添加版本信息和图标">Windows平台下为可执行文件或动态库dll添加版本信息和图标</span>
+            <span class="post-date" title="2017-09-22 15:13:47">2017/09/22</span>
+        </a>
+        
+        <a  class="全部文章 工具 Linux工具 "
+           href="/2017/09/17/【Tools系列】通过SecureCRT远程登录telnet连接虚拟机的linux系统/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="通过SecureCRT远程登录telnet连接虚拟机的linux系统（CentOS/Ubuntu）">通过SecureCRT远程登录telnet连接虚拟机的linux系统（CentOS/Ubuntu）</span>
+            <span class="post-date" title="2017-09-17 15:13:47">2017/09/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2017/08/14/【编译工具】Android NDK Build 用法/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android NDK Build 用法">Android NDK Build 用法</span>
+            <span class="post-date" title="2017-08-14 10:45:47">2017/08/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-【Codecs系列】H.263_H.263+标准研究总结" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">H.263&amp;H.263+标准研究总结</h1>
+    
+    <div class="article-meta">
+        
+        <span class="top"><a>置顶</a></span>
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="技术">技术</a> > 
+            
+            <a  data-rel="技术&lt;---&gt;编解码">编解码</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Codecs</a>
+            
+            <a class="color5">H263</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-06-14 12:13:44'>2020-07-06 15:13</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-H-263相关资料路径"><span class="toc-text">1.   H.263相关资料路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-H-263核心编码技术"><span class="toc-text">2.   H.263核心编码技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-码流结构（图像结构）"><span class="toc-text">2.1. 码流结构（图像结构）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-编解码框架"><span class="toc-text">2.2. 编解码框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-预测编码"><span class="toc-text">2.3. 预测编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-宏块划分方式"><span class="toc-text">2.3.1. 宏块划分方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-运动补偿精度和半像素插值"><span class="toc-text">2.3.2. 运动补偿精度和半像素插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-亮度MV获取"><span class="toc-text">2.3.3. 亮度MV获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-色度MV获取"><span class="toc-text">2.3.4. 色度MV获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5-参考帧获取"><span class="toc-text">2.3.5. 参考帧获取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-分块DCT变换"><span class="toc-text">2.4. 分块DCT变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-DCT变换"><span class="toc-text">2.4.1. DCT变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-范围限制"><span class="toc-text">2.4.2. 范围限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-量化-反量化"><span class="toc-text">2.5. 量化/反量化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1-量化"><span class="toc-text">2.5.1. 量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2-反量化"><span class="toc-text">2.5.2. 反量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3-范围限制"><span class="toc-text">2.5.3. 范围限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-熵编码"><span class="toc-text">2.6. 熵编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-扫描方式"><span class="toc-text">2.7. 扫描方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-块的重建"><span class="toc-text">2.8. 块的重建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-H-263标准可选编码选项"><span class="toc-text">3.   H.263标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-无限制运动矢量模式UMV"><span class="toc-text">3.1. 无限制运动矢量模式UMV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-基于句法的算术编码模式SAC"><span class="toc-text">3.2. 基于句法的算术编码模式SAC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-高级预测模式"><span class="toc-text">3.3. 高级预测模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-PB帧模式"><span class="toc-text">3.4. PB帧模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-PB中块层的组织"><span class="toc-text">3.4.1. PB中块层的组织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-PB帧中B帧MV的计算"><span class="toc-text">3.4.2. PB帧中B帧MV的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-PB帧中B块的预测"><span class="toc-text">3.4.3. PB帧中B块的预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-4-PB帧模式的优点"><span class="toc-text">3.4.4. PB帧模式的优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-H-263-标准可选编码选项"><span class="toc-text">4.   H.263+标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-无限制运动矢量模式"><span class="toc-text">4.1. 无限制运动矢量模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-高级帧内编码模式"><span class="toc-text">4.2. 高级帧内编码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-去块滤波模式"><span class="toc-text">4.3. 去块滤波模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Slice结构模式"><span class="toc-text">4.4. Slice结构模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-SEI模式"><span class="toc-text">4.5. SEI模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-改善的PB帧模式"><span class="toc-text">4.6. 改善的PB帧模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-参考帧选择模式"><span class="toc-text">4.7. 参考帧选择模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-可分级编码"><span class="toc-text">4.8. 可分级编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-9-降分辨率更新模式"><span class="toc-text">4.9. 降分辨率更新模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-10-参考帧重采样模式"><span class="toc-text">4.10.   参考帧重采样模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11-独立分割解码模式"><span class="toc-text">4.11.   独立分割解码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-可选择的帧间VLC模式"><span class="toc-text">4.12.   可选择的帧间VLC模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-13-修改的量化模式"><span class="toc-text">4.13.   修改的量化模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-H-263-码率控制模型"><span class="toc-text">5.   H.263+码率控制模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-帧级码率控制"><span class="toc-text">5.1. 帧级码率控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-宏块级码率控制"><span class="toc-text">5.2. 宏块级码率控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-H-263-标准可选编码选项"><span class="toc-text">6.   H.263++标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-增强的参考帧选择模式–ERPS"><span class="toc-text">6.1. 增强的参考帧选择模式–ERPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-数据分割的Slice模式–DPS"><span class="toc-text">6.2. 数据分割的Slice模式–DPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-额外的补充增强信息–SEI"><span class="toc-text">6.3. 额外的补充增强信息–SEI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-H-263标准与H-261和H-262（MPEG-2）标准的比较"><span class="toc-text">7.   H.263标准与H.261和H.262（MPEG-2）标准的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-标准发布时间和目的"><span class="toc-text">7.1. 标准发布时间和目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-编解码框架和压缩率"><span class="toc-text">7.2. 编解码框架和压缩率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-码流结构"><span class="toc-text">7.3. 码流结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-支持的分辨率"><span class="toc-text">7.4. 支持的分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-运动补偿精度和MV范围"><span class="toc-text">7.5. 运动补偿精度和MV范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-熵编码"><span class="toc-text">7.6. 熵编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-7-双向预测（B帧）"><span class="toc-text">7.7. 双向预测（B帧）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-8-I帧预测"><span class="toc-text">7.8. I帧预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-9-参考帧"><span class="toc-text">7.9. 参考帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-10-量化参数"><span class="toc-text">7.10.   量化参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-FFmpeg中H-263编解码器的实现分析"><span class="toc-text">8.   FFmpeg中H.263编解码器的实现分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-编码命令行"><span class="toc-text">8.1. 编码命令行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-H-263编码流程"><span class="toc-text">8.2. H.263编码流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-H-263解码流程"><span class="toc-text">8.3. H.263解码流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-总结"><span class="toc-text">9.   总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-参考文献"><span class="toc-text">10.       参考文献</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>﻿<div class='inner-toc'><h2>本文目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-H-263相关资料路径"><span class="toc-text">1.   H.263相关资料路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-H-263核心编码技术"><span class="toc-text">2.   H.263核心编码技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-码流结构（图像结构）"><span class="toc-text">2.1. 码流结构（图像结构）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-编解码框架"><span class="toc-text">2.2. 编解码框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-预测编码"><span class="toc-text">2.3. 预测编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-宏块划分方式"><span class="toc-text">2.3.1. 宏块划分方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-运动补偿精度和半像素插值"><span class="toc-text">2.3.2. 运动补偿精度和半像素插值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-亮度MV获取"><span class="toc-text">2.3.3. 亮度MV获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-色度MV获取"><span class="toc-text">2.3.4. 色度MV获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5-参考帧获取"><span class="toc-text">2.3.5. 参考帧获取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-分块DCT变换"><span class="toc-text">2.4. 分块DCT变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-DCT变换"><span class="toc-text">2.4.1. DCT变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-范围限制"><span class="toc-text">2.4.2. 范围限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-量化-反量化"><span class="toc-text">2.5. 量化/反量化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1-量化"><span class="toc-text">2.5.1. 量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2-反量化"><span class="toc-text">2.5.2. 反量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3-范围限制"><span class="toc-text">2.5.3. 范围限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-熵编码"><span class="toc-text">2.6. 熵编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-扫描方式"><span class="toc-text">2.7. 扫描方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-块的重建"><span class="toc-text">2.8. 块的重建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-H-263标准可选编码选项"><span class="toc-text">3.   H.263标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-无限制运动矢量模式UMV"><span class="toc-text">3.1. 无限制运动矢量模式UMV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-基于句法的算术编码模式SAC"><span class="toc-text">3.2. 基于句法的算术编码模式SAC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-高级预测模式"><span class="toc-text">3.3. 高级预测模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-PB帧模式"><span class="toc-text">3.4. PB帧模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-PB中块层的组织"><span class="toc-text">3.4.1. PB中块层的组织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-PB帧中B帧MV的计算"><span class="toc-text">3.4.2. PB帧中B帧MV的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-PB帧中B块的预测"><span class="toc-text">3.4.3. PB帧中B块的预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-4-PB帧模式的优点"><span class="toc-text">3.4.4. PB帧模式的优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-H-263-标准可选编码选项"><span class="toc-text">4.   H.263+标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-无限制运动矢量模式"><span class="toc-text">4.1. 无限制运动矢量模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-高级帧内编码模式"><span class="toc-text">4.2. 高级帧内编码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-去块滤波模式"><span class="toc-text">4.3. 去块滤波模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Slice结构模式"><span class="toc-text">4.4. Slice结构模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-SEI模式"><span class="toc-text">4.5. SEI模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-改善的PB帧模式"><span class="toc-text">4.6. 改善的PB帧模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-参考帧选择模式"><span class="toc-text">4.7. 参考帧选择模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-可分级编码"><span class="toc-text">4.8. 可分级编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-9-降分辨率更新模式"><span class="toc-text">4.9. 降分辨率更新模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-10-参考帧重采样模式"><span class="toc-text">4.10.   参考帧重采样模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11-独立分割解码模式"><span class="toc-text">4.11.   独立分割解码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12-可选择的帧间VLC模式"><span class="toc-text">4.12.   可选择的帧间VLC模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-13-修改的量化模式"><span class="toc-text">4.13.   修改的量化模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-H-263-码率控制模型"><span class="toc-text">5.   H.263+码率控制模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-帧级码率控制"><span class="toc-text">5.1. 帧级码率控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-宏块级码率控制"><span class="toc-text">5.2. 宏块级码率控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-H-263-标准可选编码选项"><span class="toc-text">6.   H.263++标准可选编码选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-增强的参考帧选择模式–ERPS"><span class="toc-text">6.1. 增强的参考帧选择模式–ERPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-数据分割的Slice模式–DPS"><span class="toc-text">6.2. 数据分割的Slice模式–DPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-额外的补充增强信息–SEI"><span class="toc-text">6.3. 额外的补充增强信息–SEI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-H-263标准与H-261和H-262（MPEG-2）标准的比较"><span class="toc-text">7.   H.263标准与H.261和H.262（MPEG-2）标准的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-标准发布时间和目的"><span class="toc-text">7.1. 标准发布时间和目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-编解码框架和压缩率"><span class="toc-text">7.2. 编解码框架和压缩率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-码流结构"><span class="toc-text">7.3. 码流结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-支持的分辨率"><span class="toc-text">7.4. 支持的分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-运动补偿精度和MV范围"><span class="toc-text">7.5. 运动补偿精度和MV范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-熵编码"><span class="toc-text">7.6. 熵编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-7-双向预测（B帧）"><span class="toc-text">7.7. 双向预测（B帧）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-8-I帧预测"><span class="toc-text">7.8. I帧预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-9-参考帧"><span class="toc-text">7.9. 参考帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-10-量化参数"><span class="toc-text">7.10.   量化参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-FFmpeg中H-263编解码器的实现分析"><span class="toc-text">8.   FFmpeg中H.263编解码器的实现分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-编码命令行"><span class="toc-text">8.1. 编码命令行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-H-263编码流程"><span class="toc-text">8.2. H.263编码流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-H-263解码流程"><span class="toc-text">8.3. H.263解码流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-总结"><span class="toc-text">9.   总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-参考文献"><span class="toc-text">10.       参考文献</span></a></li></ol></div></p>
+<h2 id="1-H-263相关资料路径"><a href="#1-H-263相关资料路径" class="headerlink" title="1.   H.263相关资料路径"></a>1.   H.263相关资料路径</h2><p>1）、H.263官方标准下载</p>
+<p><a href="https://www.itu.int/rec/T-REC-H.263-199603-S/en" target="_blank" rel="noopener">https://www.itu.int/rec/T-REC-H.263-199603-S/en</a></p>
+<p>2）、H.263标准相关文献</p>
+<p>H.263: video coding for low-bit-rate<br>communication：<a href="https://sci-hub.tw/10.1109/35.556485" target="_blank" rel="noopener">https://sci-hub.tw/10.1109/35.556485</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/display/itu-t-h-263" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows-hardware/drivers/display/itu-t-h-263</a></p>
+<p>3）、H.263+相关</p>
+<p>H.263+: the new ITU-T Recommendation for<br>video coding at low bit rates</p>
+<p><a href="https://ieeexplore.ieee.org/document/679710" target="_blank" rel="noopener">https://ieeexplore.ieee.org/document/679710</a></p>
+<p>H.263+: video coding at low bit rates</p>
+<p><a href="https://pdfs.semanticscholar.org/5e5e/8a4940c796a161f994b15a4fa321e5b86705.pdf" target="_blank" rel="noopener">https://pdfs.semanticscholar.org/5e5e/8a4940c796a161f994b15a4fa321e5b86705.pdf</a></p>
+<p>4）、H.263与H.261比较</p>
+<p>Comparison of the H.263 and H.261 video<br>compression standards</p>
+<p><a href="https://ui.adsabs.harvard.edu/abs/1995SPIE10282E..0DG/abstract" target="_blank" rel="noopener">https://ui.adsabs.harvard.edu/abs/1995SPIE10282E..0DG/abstract</a></p>
+<p>5）、H.263++相关</p>
+<p><a href="https://www.itu.int/rec/T-REC-H.263-200011-S!AnnU/en" target="_blank" rel="noopener">https://www.itu.int/rec/T-REC-H.263-200011-S!AnnU/en</a></p>
+<p><a href="https://www.itu.int/rec/T-REC-H.263-200011-S!AnnV/en" target="_blank" rel="noopener">https://www.itu.int/rec/T-REC-H.263-200011-S!AnnV/en</a></p>
+<p><a href="https://www.itu.int/rec/T-REC-H.263-200011-S!AnnW/en" target="_blank" rel="noopener">https://www.itu.int/rec/T-REC-H.263-200011-S!AnnW/en</a></p>
+<p>关于H.263和H.263+编码技术：<a href="http://www.txrzx.com/i2708-0.html" target="_blank" rel="noopener">http://www.txrzx.com/i2708-0.html</a></p>
+<h2 id="2-H-263核心编码技术"><a href="#2-H-263核心编码技术" class="headerlink" title="2.   H.263核心编码技术"></a>2.   H.263核心编码技术</h2><p>H.263编码采用了基于运动补偿的帧间预测和DCT变换的混合编码框架，相比于H.261进行了局部算法改进和引入了可选的高级编码选项，提高了压缩效率和容错性，适用于低比特率编码的视频会议和可视话机的应用场景。</p>
+<p>H.263标准包括如下的4个核心编码技术：</p>
+<p>（1）  基于运动补偿的帧间预测</p>
+<p>（2） DCT变换编码</p>
+<p>（3）量化</p>
+<p>（4） 熵编码</p>
+<p>下面在详细讲解这4个核心编码技术之前，先看一下码流结构和编解码框架。</p>
+<h3 id="2-1-码流结构（图像结构）"><a href="#2-1-码流结构（图像结构）" class="headerlink" title="2.1. 码流结构（图像结构）"></a>2.1. 码流结构（图像结构）</h3><p>H.263采用分层结构的方式组织码流，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200527090957968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="H.263码流结构"></p>
+<p>（1）    图像层Picture：<br><img src="https://img-blog.csdnimg.cn/20200527091003249.png" alt="图像层"></p>
+<p>（2）    块组层GOB:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200527091007157.png" alt="块组层"></p>
+<p>（3）    宏块层Macroblock:<br><img src="https://img-blog.csdnimg.cn/2020052709101181.png" alt="宏块层"></p>
+<p>（4）    块层Block：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200527091014419.png" alt="块层"></p>
+<h3 id="2-2-编解码框架"><a href="#2-2-编解码框架" class="headerlink" title="2.2. 编解码框架"></a>2.2. 编解码框架</h3><p><img src="https://img-blog.csdnimg.cn/20200527091030906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="编解码框架"></p>
+<p>图 H.263编码流程</p>
+<h3 id="2-3-预测编码"><a href="#2-3-预测编码" class="headerlink" title="2.3. 预测编码"></a>2.3. 预测编码</h3><p>使用时域预测的模式称为INTER模式，不使用时域预测的模式称为INTRA模式。</p>
+<p>注：INTRA编码模式可以使用在图像级（I帧的INTRA或者P帧的INTER）或者P帧中的宏块。</p>
+<p>支持5种图像分辨率：sub-QCIF(128x96)，QCIF(176x144)，CIF（352x288），4CIF(704x576)和16CIF(1408x1152)。编码配置在语法PTYPE中。</p>
+<h4 id="2-3-1-宏块划分方式"><a href="#2-3-1-宏块划分方式" class="headerlink" title="2.3.1. 宏块划分方式"></a>2.3.1. 宏块划分方式</h4><p>帧内编码以16x16宏块为单位进行，没有像素域预测。</p>
+<p>帧间编码以16x16宏块为单位进行，采用时域预测。</p>
+<h4 id="2-3-2-运动补偿精度和半像素插值"><a href="#2-3-2-运动补偿精度和半像素插值" class="headerlink" title="2.3.2. 运动补偿精度和半像素插值"></a>2.3.2. 运动补偿精度和半像素插值</h4><p>（1） 运动补偿精度</p>
+<p>H.263支持半像素精度的运动估计和运动补偿，通过运动补偿的帧间预测来降低时域冗余。</p>
+<p>在可选的PB帧模式中，B帧中的模式都是INTER模式。B帧是部分双向预测的。（此处如何理解？）====》参考Annex G（PB帧预测模式）</p>
+<p>理解：在PB帧预测模式中，B帧预测可以是双向预测，也可以是前向预测。</p>
+<p>（2） 半像素预测插值</p>
+<p>半像素精度的值通过双线性插值获得，如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200527091056927.png" alt="半像素预测插值"></p>
+<h4 id="2-3-3-亮度MV获取"><a href="#2-3-3-亮度MV获取" class="headerlink" title="2.3.3. 亮度MV获取"></a>2.3.3. 亮度MV获取</h4><p>MV=MVP+MVD（MVD在码流中传输，通过VLC解码得到），MVD的VLC表部分如下：<br><img src="https://img-blog.csdnimg.cn/20200527091141773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="VLC"></p>
+<ul>
+<li>相邻块可用性：</li>
+</ul>
+<p>对于在当前GOB或者图像边界的情况，相邻块可用性按照如下顺序进行判定：</p>
+<p>（1）    当对应宏块采用INTRA编码模式或者不编码（COD=1）,则候选预测MV为(0, 0)；</p>
+<p>（2）    当对应宏块超出图像边界（左边块），则候选预测MV1设置为(0, 0)；</p>
+<p>（3）    如果对应宏块超出图像边界（上边块和右上块）或者GOB边界，则候选预测预测MV2和MV3设置为MV1；</p>
+<p>（4）    如果对应宏块超出图像边界（右边），则候选预测MV3为(0, 0)。</p>
+<ul>
+<li>MVP获取过程：</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200527091216559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="MVP获取过程"></p>
+<p>说明：当前MV的预测运动矢量MVP采用三个候选预测运动矢量的中值。</p>
+<h4 id="2-3-4-色度MV获取"><a href="#2-3-4-色度MV获取" class="headerlink" title="2.3.4. 色度MV获取"></a>2.3.4. 色度MV获取</h4><p>色度MV是亮度MV除以2即可。</p>
+<p>生成的四分之一像素精度矢量的分量值修改成接近半像素位置，如下表所示：</p>
+<p>（为什么要对色度MV进行修正？）</p>
+<p>理解：<br><img src="https://img-blog.csdnimg.cn/20200527091235629.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200527091238769.png" alt="在这里插入图片描述"></p>
+<h4 id="2-3-5-参考帧获取"><a href="#2-3-5-参考帧获取" class="headerlink" title="2.3.5. 参考帧获取"></a>2.3.5. 参考帧获取</h4><p>H.263中的P帧的参考帧只支持前向单参考，即当前解码P帧参考前一帧解码的P帧或者I帧。</p>
+<h3 id="2-4-分块DCT变换"><a href="#2-4-分块DCT变换" class="headerlink" title="2.4. 分块DCT变换"></a>2.4. 分块DCT变换</h3><h4 id="2-4-1-DCT变换"><a href="#2-4-1-DCT变换" class="headerlink" title="2.4.1. DCT变换"></a>2.4.1. DCT变换</h4><p>采用通用的DCT变换算法，需要注意精度要求（具体参见Annex A）。</p>
+<p>inverse transform mismatch error</p>
+<p>DCT变换以8x8块为单位进行，反变换公式如下：<br><img src="https://img-blog.csdnimg.cn/20200527091301966.png" alt="反变换"></p>
+<h4 id="2-4-2-范围限制"><a href="#2-4-2-范围限制" class="headerlink" title="2.4.2. 范围限制"></a>2.4.2. 范围限制</h4><p>反变换后的像素取值范围为[-256, +255]。</p>
+<h3 id="2-5-量化-反量化"><a href="#2-5-量化-反量化" class="headerlink" title="2.5. 量化/反量化"></a>2.5. 量化/反量化</h3><h4 id="2-5-1-量化"><a href="#2-5-1-量化" class="headerlink" title="2.5.1. 量化"></a>2.5.1. 量化</h4><p>The quantizers consist of equally spaced reconstruction levels<br>with a dead zone centered at zero.</p>
+<p>量化参数取值为1-31。</p>
+<p>每个宏块采用相同的量化步长，帧内DC块的量化步长为8，其他系数的量化步长为2到62。(同H.261标准)</p>
+<p>注：关于量化死区的理解：量化后为0的区域称为量化死区dead-zone</p>
+<p><strong>H.263量化方法：</strong></p>
+<ul>
+<li>帧内DC系数： F’’[0][0] = dc_scaler * QF[0][0]，其中dc_scaler为8。</li>
+</ul>
+<ul>
+<li>其他系数：量化参数quantiser_scale是从1到2^(<br>quant_precision-1)的整数，量化步长是quantiser_scale的两倍，此处quant_precision为6，量化步长为2~62的偶数。</li>
+</ul>
+<p>特别注意：宏块中的除了帧内DC系数外的所有系数采用相同的量化步长。</p>
+<h4 id="2-5-2-反量化"><a href="#2-5-2-反量化" class="headerlink" title="2.5.2. 反量化"></a>2.5.2. 反量化</h4><p>（1）帧内DC系数反量化：乘以8<br><img src="https://img-blog.csdnimg.cn/2020052709141348.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="反量化"></p>
+<p>（2）其他系数的反量化：</p>
+<p>反量化公式如下：</p>
+<p>|REC| = QUANT · (2 · |LEVEL| + 1) if QUANT = “odd”</p>
+<p>|REC| = QUANT · (2 · |LEVEL| + 1) – 1 if QUANT = “even”</p>
+<p>REC = sign(LEVEL) · |REC|</p>
+<h4 id="2-5-3-范围限制"><a href="#2-5-3-范围限制" class="headerlink" title="2.5.3. 范围限制"></a>2.5.3. 范围限制</h4><p>反量化后的残差系数的取值范围被限制到[-2048, 2047]。</p>
+<h3 id="2-6-熵编码"><a href="#2-6-熵编码" class="headerlink" title="2.6. 熵编码"></a>2.6. 熵编码</h3><p>H.263标准支持可变长编码3D-VLC（LAST, RUN, LEVEL）。</p>
+<p>注：标准中一些句法的VLC解析都是采用查表的方式进行的。</p>
+<h3 id="2-7-扫描方式"><a href="#2-7-扫描方式" class="headerlink" title="2.7. 扫描方式"></a>2.7. 扫描方式</h3><p>针对量化后的变换系数按照8x8块大小采用Zigzag扫描方式将二维残差矩阵转换为一维扫描系数。</p>
+<p>目的：通过Zigzag重排量化后的变换系数，有利于采用游程编码和变长编码，进一步降低空间冗余和统计冗余。</p>
+<p>如下所示：<br><img src="https://img-blog.csdnimg.cn/20200527091440290.png" alt="扫描"></p>
+<h3 id="2-8-块的重建"><a href="#2-8-块的重建" class="headerlink" title="2.8. 块的重建"></a>2.8. 块的重建</h3><p>（1）    重建：</p>
+<ul>
+<li><p>对于INTRA块： 重建值=反变换后的残差值</p>
+</li>
+<li><p>对于INTER块： 重建值=反变换后的残差值+预测值</p>
+</li>
+</ul>
+<p>（2）    范围限制Clipping:</p>
+<p>对重建值的取值范围限制在[0,255]。</p>
+<h2 id="3-H-263标准可选编码选项"><a href="#3-H-263标准可选编码选项" class="headerlink" title="3.   H.263标准可选编码选项"></a>3.   H.263标准可选编码选项</h2><ul>
+<li><p>Annex D: 无限制运动矢量模式UMV</p>
+</li>
+<li><p>Annex E: 基于句法的算术编码模式SAC</p>
+</li>
+<li><p>Annex F: 高级预测模式（OBMC，Inter4V）</p>
+</li>
+<li><p>Annex G: PB帧模式</p>
+</li>
+</ul>
+<h3 id="3-1-无限制运动矢量模式UMV"><a href="#3-1-无限制运动矢量模式UMV" class="headerlink" title="3.1. 无限制运动矢量模式UMV"></a>3.1. 无限制运动矢量模式UMV</h3><p>在这种模式下，运动矢量可以指向图像边界的外面。使用图像边界上的像素来填充扩充边界的像素。此时，MV的范围从[-16,+15.5]扩展到了[-31.5, +31.5]。</p>
+<p>优点：这种模式对于存在跨图像边界的运动情况（比如相机移动）的编码效率很高，尤其对于小的图像分辨率。</p>
+<h3 id="3-2-基于句法的算术编码模式SAC"><a href="#3-2-基于句法的算术编码模式SAC" class="headerlink" title="3.2. 基于句法的算术编码模式SAC"></a>3.2. 基于句法的算术编码模式SAC</h3><p>使用基于句法的算术编码模式，压缩效率要高于可变长编码VLC，但编码复杂度要高很多。</p>
+<p>具体结合实现进行理解？注意是基于句法，不是基于概率。</p>
+<h3 id="3-3-高级预测模式"><a href="#3-3-高级预测模式" class="headerlink" title="3.3. 高级预测模式"></a>3.3. 高级预测模式</h3><ul>
+<li>OBMC： Overlapped Block Motion Compensation</li>
+</ul>
+<p>采用OBMC在提高预测精度的同时还可以减少块效应。</p>
+<p>核心思想：对于块的上半部分的像素使用当前块上面块的运动矢量；对于块的左半部分的像素使用当前块左边块的运动矢量。对于8x8块的预测，OBMC使用了3个运动矢量。</p>
+<p>p(i, j) = (q(i, j) × H0(i, j) + r(i, j) × H1(i, j) + s(i, j) × H2(i, j) + 4) / 8，</p>
+<p>q(i, j) = p(i + MV0,x, j + MV0,y)</p>
+<p>r(i, j) = p(i + MV1,x, j + MV1,y)</p>
+<p>s(i, j) = p(i + MV2,x, j + MV2,y)</p>
+<p>其中q,r,s表示参考像素，MV0表示当前块的运动矢量，MV1表示上边块或下边块的运动矢量，MV2表示左边块或右边块的运动矢量，H0，H1和H2表示加权矩阵。</p>
+<ul>
+<li>Inter4V: 对于一些宏块，采用4个8x8大小的运动矢量。</li>
+</ul>
+<h3 id="3-4-PB帧模式"><a href="#3-4-PB帧模式" class="headerlink" title="3.4. PB帧模式"></a>3.4. PB帧模式</h3><p>PB帧模式就是将P帧和B帧两帧图像编码为一个单元。 如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200527091610308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="PB帧模式"></p>
+<p>PB帧的编码模式INTRA具有如下含义：</p>
+<p>（1）    P块是INTRA编码</p>
+<p>（2）    B块是INTER编码，并使用了对INTER块的预测。</p>
+<h4 id="3-4-1-PB中块层的组织"><a href="#3-4-1-PB中块层的组织" class="headerlink" title="3.4.1. PB中块层的组织"></a>3.4.1. PB中块层的组织</h4><p>在PB帧模式中，一个宏块中包含12个块（6个P块和6个B块）。B帧和P帧量化后的DCT系数是交织存放在一个宏块中。先存放P帧宏块，再存放B帧宏块。</p>
+<h4 id="3-4-2-PB帧中B帧MV的计算"><a href="#3-4-2-PB帧中B帧MV的计算" class="headerlink" title="3.4.2. PB帧中B帧MV的计算"></a>3.4.2. PB帧中B帧MV的计算</h4><p>假设P帧中对应块的运动矢量为MV，则B帧中宏块的前向运动矢量MVF和MVB是由MV和一个delta矢量（由句法MVDB给出）计算得到的。</p>
+<p>MVF = (TRB × MV) / TRD + MVD</p>
+<p>MVB = ((TRB – TRD) × MV) / TRD    if MVD is equal to 0</p>
+<p>MVB = MVF – MV<br>if MVD is unequal to 0</p>
+<h4 id="3-4-3-PB帧中B块的预测"><a href="#3-4-3-PB帧中B块的预测" class="headerlink" title="3.4.3. PB帧中B块的预测"></a>3.4.3. PB帧中B块的预测</h4><p>在解码端，P宏块首先被解码出来，</p>
+<p>假设P宏块的重建块为PREC，</p>
+<ul>
+<li><p>对于后向运动矢量MVB指向PREC 的内部的像素，采用双向预测；</p>
+</li>
+<li><p>对于所有的其他像素，采用前向预测。</p>
+</li>
+</ul>
+<h4 id="3-4-4-PB帧模式的优点"><a href="#3-4-4-PB帧模式的优点" class="headerlink" title="3.4.4. PB帧模式的优点"></a>3.4.4. PB帧模式的优点</h4><p>可以在增加较少比特数的情况下增加帧率。</p>
+<h2 id="4-H-263-标准可选编码选项"><a href="#4-H-263-标准可选编码选项" class="headerlink" title="4.   H.263+标准可选编码选项"></a>4.   H.263+标准可选编码选项</h2><p>H.263+标准是H.263标准的第二个版本，H.263 version2，相比于H.263，在压缩性能、包网络支持、视频格式的扩展支持和其他新功能上更加完善和优越。</p>
+<p>在H.263基础上增加12种可选编码模式：</p>
+<h3 id="4-1-无限制运动矢量模式"><a href="#4-1-无限制运动矢量模式" class="headerlink" title="4.1. 无限制运动矢量模式"></a>4.1. 无限制运动矢量模式</h3><p>无限制运动矢量模式（Unrestricted Motion Vector Mode）</p>
+<p>(1)  Mvd的编码方式不同于H.263</p>
+<p>new reversible VLC’s (RVLC’s) are used for encoding the difference motion vectors. These</p>
+<p>codes are single valued, as opposed to the earlier H.263 VLC’s which were double valued.</p>
+<p>(2)  MV的范围扩展到了[-256, +255.5]（H.263中是[-31.5, +31.5]）</p>
+<h3 id="4-2-高级帧内编码模式"><a href="#4-2-高级帧内编码模式" class="headerlink" title="4.2. 高级帧内编码模式"></a>4.2. 高级帧内编码模式</h3><p>高级帧内编码模式（Advanced Intra Coding Mode）</p>
+<p>（1）支持三种预测模式：DC模式、水平预测模式和垂直预测模式。</p>
+<p>（2）并且针对采用不同预测模式的残差块系数采用不同的扫描方式：</p>
+<ul>
+<li><p>DC预测采用基本的Zigzag扫描；</p>
+</li>
+<li><p>水平预测采用垂直交替扫描方式（同Mpeg2标准）</p>
+</li>
+<li><p>垂直预测采用水平交替扫描方式。</p>
+</li>
+</ul>
+<p>（3）针对帧内编码块，采用单独的VLC表（即针对帧内和帧间残差系数分别采用不同的VLC表）。</p>
+<h3 id="4-3-去块滤波模式"><a href="#4-3-去块滤波模式" class="headerlink" title="4.3. 去块滤波模式"></a>4.3. 去块滤波模式</h3><p>去块滤波模式（Deblocking Filter Mode）</p>
+<p>（1）    针对8x8块的边界进行滤波，先水平方向，然后垂直方向；</p>
+<p>（2）    滤波系数的选择与量化步长有关系，量化越粗糙，滤波系数就越大。</p>
+<h3 id="4-4-Slice结构模式"><a href="#4-4-Slice结构模式" class="headerlink" title="4.4. Slice结构模式"></a>4.4. Slice结构模式</h3><p>Slice结构模式（Slice Structured Mode）</p>
+<p>不同于GOB结构，可以将图像分割成包含可变数目宏块的片段。</p>
+<p>H.263+标准首次引入Slice片的技术。</p>
+<p>优点：</p>
+<p>（1）    增加对于不同环境和应用的的灵活性</p>
+<p>（2）    Slice头可以作为同步点，实现在比特错误或者丢包情况下的解码恢复。</p>
+<h3 id="4-5-SEI模式"><a href="#4-5-SEI模式" class="headerlink" title="4.5. SEI模式"></a>4.5. SEI模式</h3><p>SEI模式（Supplemente Enhancement Information Mode）</p>
+<p>提供显示相关特性的信息，比如图像冻结，图像截图，视频分割等。</p>
+<h3 id="4-6-改善的PB帧模式"><a href="#4-6-改善的PB帧模式" class="headerlink" title="4.6. 改善的PB帧模式"></a>4.6. 改善的PB帧模式</h3><p>改善的PB帧模式（Improved PB-Frames Mode）</p>
+<p>PB帧中B块的预测支持双向模式、前向模式和后向模式。</p>
+<p>后向模式预测没有mv?</p>
+<ul>
+<li><p>双向模式：与H.263中的PB帧模式基本一样，不同的是H.263+中不需要传输delta vector；</p>
+</li>
+<li><p>前向模式：采用前一个P宏块进行预测，需要传输一个前向MV;</p>
+</li>
+<li><p>后向模式：预测块就是“未来的”P宏块，因此不需要传输MV。</p>
+</li>
+</ul>
+<h3 id="4-7-参考帧选择模式"><a href="#4-7-参考帧选择模式" class="headerlink" title="4.7. 参考帧选择模式"></a>4.7. 参考帧选择模式</h3><p>参考帧选择模式（Reference Picture Selection Mode）</p>
+<p>目的：减少错误传播，增加容错机制</p>
+<p>实现方式：在解码端需要存储多个参考帧，在编码码流中会指定选择的参考帧。通过这种模式可以选择用于预测的参考帧，减少时域错误传播。</p>
+<h3 id="4-8-可分级编码"><a href="#4-8-可分级编码" class="headerlink" title="4.8. 可分级编码"></a>4.8. 可分级编码</h3><p>可分级编码（Temporal,SNR and Spatial Scalability Mode）</p>
+<p>（1）    时域可分级：</p>
+<ul>
+<li><p>功能：通过增加显示帧率来增强感知质量。</p>
+</li>
+<li><p>实现方式：通过插入B帧实现。其中B帧属于增强层，IPPP属于基本层。如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200527091832949.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<p>（2）    空域可分级：</p>
+<ul>
+<li><p>功能：生成多分辨率的码流，实现不同显示需求或限制。</p>
+</li>
+<li><p>实现方式：在本质上和SNR可分级一样，通过在增强层提供更高分辨率的编码图像。      </p>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200527091837558.png" alt="在这里插入图片描述"></p>
+<p>（3）    SNR可分级：</p>
+<ul>
+<li><p>功能：生成多比特率的码流。</p>
+</li>
+<li><p>实现方式：通过在增强层采用更好的量化器来编码差值图像。</p>
+</li>
+</ul>
+<p>如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200527091841786.png" alt="在这里插入图片描述"></p>
+<h3 id="4-9-降分辨率更新模式"><a href="#4-9-降分辨率更新模式" class="headerlink" title="4.9. 降分辨率更新模式"></a>4.9. 降分辨率更新模式</h3><p>通过低分辨率图像编码和更新信息生成高分辨率图像。适用于背景复杂的快速运动场景。</p>
+<h3 id="4-10-参考帧重采样模式"><a href="#4-10-参考帧重采样模式" class="headerlink" title="4.10.   参考帧重采样模式"></a>4.10.   参考帧重采样模式</h3><p>在对当前帧图像进行预测之前提供不同分辨率、转换和wrap的参考图像。</p>
+<h3 id="4-11-独立分割解码模式"><a href="#4-11-独立分割解码模式" class="headerlink" title="4.11.   独立分割解码模式"></a>4.11.   独立分割解码模式</h3><p>在这种模式下，图像分割边界看做是图像边界，在图像分割边界两侧是没有数据依赖的。</p>
+<p>这种模式适用于Slice结构。</p>
+<h3 id="4-12-可选择的帧间VLC模式"><a href="#4-12-可选择的帧间VLC模式" class="headerlink" title="4.12.   可选择的帧间VLC模式"></a>4.12.   可选择的帧间VLC模式</h3><p>针对采用小的量化步长的帧间宏块，可选择采用帧内VLC表。</p>
+<p>设计思想：</p>
+<p>采用小的量化步长的帧间宏块，量化后的残差系数值较大并且连续0的run值较小，类似于帧内宏块残差系数的特点，因此使用帧内VLC表进行编码。</p>
+<h3 id="4-13-修改的量化模式"><a href="#4-13-修改的量化模式" class="headerlink" title="4.13.   修改的量化模式"></a>4.13.   修改的量化模式</h3><p>（1）    允许码率控制方法在宏块级更加灵活的更改量化系数；</p>
+<p>H.263中可以在很小范围内（正负1或者正负2）在宏块级修改量化参数；</p>
+<p>而H.263+中修改的量化模式允许在宏块级修改量化参数到任何值。</p>
+<p>（2）    通过采用一个更小的色度量化步长来增强色度质量；</p>
+<p>而在H.263中，亮度块和色度块采用相同的量化步长（QP step）。</p>
+<p>（3）    通过扩展可表示的量化的DCT系数的范围来改善图像质量。</p>
+<h2 id="5-H-263-码率控制模型"><a href="#5-H-263-码率控制模型" class="headerlink" title="5.   H.263+码率控制模型"></a>5.   H.263+码率控制模型</h2><p>这里介绍一种TMN8采用的码率控制算法，适用于低延时的视频会议应用场景。</p>
+<p>参考文献：Rate Control in DCT Video Coding for Low-Delay<br>Communications，IEEE TCSVT， 1999.</p>
+<p>TMN8码率控制是为低延迟视频通信设计的码率控制算法。</p>
+<p>TMN8码率控制分为帧级码率控制和宏块级码率控制。帧级码率控制会为当前帧选择合适的目标比特数，宏块级码率控制会为当前帧内的每个宏块计算QP（或者QPstep）。如果缓冲区溢出，则跳过当前的编码。</p>
+<h3 id="5-1-帧级码率控制"><a href="#5-1-帧级码率控制" class="headerlink" title="5.1. 帧级码率控制"></a>5.1. 帧级码率控制</h3><p>在帧级码率控制中，帧的目标比特数由缓冲区buffer的充盈度、帧率和信道速度决定。在编码当前帧前通过下式计算缓冲区充盈度W:<br><img src="https://img-blog.csdnimg.cn/20200527091929895.png" alt="在这里插入图片描述"></p>
+<p>其中，</p>
+<p>B’表示编码前一帧的比特数，</p>
+<p>Wpred表示buffer中前一个比特数；（初始状态下，Wpred=0，B’表示I帧的编码比特数）</p>
+<p>R表示信道速度，F表示帧率。</p>
+<p>当W大于最大值M（M=R/F）,编码器跳过要编码的帧直到缓冲区充盈度小于M。每跳过一帧，缓冲区的充盈度减小R/F。</p>
+<p>当前帧分配的目标比特如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200527091943632.png" alt="在这里插入图片描述"><br>其中，delta表示为：<br><img src="https://img-blog.csdnimg.cn/20200527091948782.png" alt="在这里插入图片描述"><br>其中Z为0.1。delta是一个很小的值来提供对缓冲区充盈度的反馈。如果W大于M的10%，目标比特数B会稍微减少；否则，B会稍微增加。</p>
+<h3 id="5-2-宏块级码率控制"><a href="#5-2-宏块级码率控制" class="headerlink" title="5.2. 宏块级码率控制"></a>5.2. 宏块级码率控制</h3><p>宏块级码率控制按照扫描顺序为帧内每个MB计算量化步长。第i个宏块的量化步长计算如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200527092000403.png" alt="在这里插入图片描述"></p>
+<p>其中，<br><img src="https://img-blog.csdnimg.cn/20200527092007730.png" alt="在这里插入图片描述"></p>
+<p>宏块级码率控制从第一个MB开始用上式计算Q1，然后用Q1编码MB。然后用该帧的目标比特数减去估计的头比特数和已经使用的比特数得到剩余目标比特数，用剩余比特数按同样的方法编码接下来的MB，每编码完一个宏块就更新模型参数K和C。</p>
+<h2 id="6-H-263-标准可选编码选项"><a href="#6-H-263-标准可选编码选项" class="headerlink" title="6.   H.263++标准可选编码选项"></a>6.   H.263++标准可选编码选项</h2><p>在H.263+基础上增加了3种可选编码选项：</p>
+<p>（1）    Annex U: Enhanced reference picture selection mode</p>
+<p>（2）    Annex V: Data-partitioned slice mode</p>
+<p>（3）    Annex W: Additional supplement enhancement information specification</p>
+<p>分别对上面三个高级编码选项进行分析：</p>
+<h3 id="6-1-增强的参考帧选择模式–ERPS"><a href="#6-1-增强的参考帧选择模式–ERPS" class="headerlink" title="6.1. 增强的参考帧选择模式–ERPS"></a>6.1. 增强的参考帧选择模式–ERPS</h3><p>ERPS模式可以增强容错性和提高编码效率。</p>
+<p>（1）    对于容错性，ERPS模式可以使用后向通道信息，由解码器发送消息给编码器告知哪些帧解码错误。</p>
+<p>（2）    对于编码效率，运动补偿可以扩展成支持多参考帧的预测。</p>
+<h3 id="6-2-数据分割的Slice模式–DPS"><a href="#6-2-数据分割的Slice模式–DPS" class="headerlink" title="6.2. 数据分割的Slice模式–DPS"></a>6.2. 数据分割的Slice模式–DPS</h3><p>  DPS模式可以增强容错性，尤其是在传输过程中的局部码流错误。</p>
+<p>数据分割技术在易错环境中提供了鲁棒性。这种功能是通过对H.263句法进行重排来实现对传输错误的提前监测和恢复。</p>
+<p>（1）    分离头数据和运动矢量数据</p>
+<p>采用数据分割时，slice中的数据会进行重新排列，首先是宏块的头信息，然后是运动矢量信息，最后是DCT系数。</p>
+<p>（2）    使用可逆表示来保护运动矢量数据</p>
+<p>采用RVLC编码运动矢量数据。</p>
+<h3 id="6-3-额外的补充增强信息–SEI"><a href="#6-3-额外的补充增强信息–SEI" class="headerlink" title="6.3. 额外的补充增强信息–SEI"></a>6.3. 额外的补充增强信息–SEI</h3><p>额外的SEI信息包括：</p>
+<p>（1）    指示使用特定的定点IDCT;</p>
+<p>（2）    图像信息，包括的信息类型有：</p>
+<ul>
+<li>任意的二进制数据</li>
+</ul>
+<ul>
+<li><p>文本信息（任意文本、版权、视频描述、URI信息）</p>
+</li>
+<li><p>场信息（顶场还是底场）</p>
+<p>额外的SEI信息存放在图像层的PSUFF字段中。</p>
+</li>
+</ul>
+<h2 id="7-H-263标准与H-261和H-262（MPEG-2）标准的比较"><a href="#7-H-263标准与H-261和H-262（MPEG-2）标准的比较" class="headerlink" title="7.   H.263标准与H.261和H.262（MPEG-2）标准的比较"></a>7.   H.263标准与H.261和H.262（MPEG-2）标准的比较</h2><p>比较的维度如下所示：</p>
+<h3 id="7-1-标准发布时间和目的"><a href="#7-1-标准发布时间和目的" class="headerlink" title="7.1. 标准发布时间和目的"></a>7.1. 标准发布时间和目的</h3><ul>
+<li><p>H.261: 1990年，实现在ISDN上进行视频会议或可视电话等对称应用。</p>
+</li>
+<li><p>H.262: 1994年，实现视音频服务与应用交互的可能性，基于对象的编码。</p>
+</li>
+<li><p>H.263: 1996年，为低码率通信设计。</p>
+</li>
+</ul>
+<h3 id="7-2-编解码框架和压缩率"><a href="#7-2-编解码框架和压缩率" class="headerlink" title="7.2. 编解码框架和压缩率"></a>7.2. 编解码框架和压缩率</h3><ul>
+<li>H.261：压缩率为20~30，小于MPEG-1，采用基于运动补偿的帧间预测、分块DCT和量化相结合的混合编码方法。</li>
+</ul>
+<ul>
+<li>H.262: 压缩率为30~40，采用基于运动补偿的帧间预测（单双向预测）、DCT和量化的混合编码方法，支持可伸缩性，前向兼容MPEG-1。</li>
+</ul>
+<ul>
+<li>H.263：压缩率高于H.262，采用基于运动补偿的帧间预测（单双向预测），DCT和量化的混合编码，并进行局部算法改进和支持可选编码选项，支持可伸缩性。</li>
+</ul>
+<h3 id="7-3-码流结构"><a href="#7-3-码流结构" class="headerlink" title="7.3. 码流结构"></a>7.3. 码流结构</h3><ul>
+<li><p>H.261：分层结构，同H.263。</p>
+</li>
+<li><p>H.262: 分层结构，分成6层，自上而下分别是：图像序列层（Video Sequence）、图像组层（GOP）、图像层（Picture）、宏块条层（Slice）、宏块层（Macroblock）和块层（block）。</p>
+</li>
+<li><p>H.263：分层结构，分成4层，自上而下分别是：图像层（Picture Frame）、块组层（GOB）、宏块层（Macorblock）和块层（Block）。</p>
+</li>
+</ul>
+<h3 id="7-4-支持的分辨率"><a href="#7-4-支持的分辨率" class="headerlink" title="7.4. 支持的分辨率"></a>7.4. 支持的分辨率</h3><ul>
+<li><p>H.261: 支持CIF和QCIF两种分辨率</p>
+</li>
+<li><p>H.262：支持CIF，4CIF，16CIF，1920x1152等多种分辨率。</p>
+</li>
+<li><p>H.263: 支持SQCIF、QCIF、CIF、4CIF和16CIF五种分辨率。</p>
+</li>
+</ul>
+<h3 id="7-5-运动补偿精度和MV范围"><a href="#7-5-运动补偿精度和MV范围" class="headerlink" title="7.5. 运动补偿精度和MV范围"></a>7.5. 运动补偿精度和MV范围</h3><ul>
+<li><p>H.261: 支持全像素精度，只支持1个MV（1个MB 分配一个MV），MV范围为[-15,+15]</p>
+</li>
+<li><p>H.262：支持半像素精度，MV范围为[-512,511.5]</p>
+</li>
+<li><p>H.263：支持半像素精度，支持1MV和4MV（高级预测模式下才支持），MV范围为[-16,+15.5]，无限制运动矢量模式中扩展为[-31.5, +31.5]</p>
+</li>
+</ul>
+<h3 id="7-6-熵编码"><a href="#7-6-熵编码" class="headerlink" title="7.6. 熵编码"></a>7.6. 熵编码</h3><ul>
+<li><p>H.261：不支持熵编码。</p>
+</li>
+<li><p>H.262: 支持VLC编码</p>
+</li>
+<li><p>H.263：支持3D-VLC编码和基于句法的算术编码（高级编码选项）</p>
+</li>
+</ul>
+<h3 id="7-7-双向预测（B帧）"><a href="#7-7-双向预测（B帧）" class="headerlink" title="7.7. 双向预测（B帧）"></a>7.7. 双向预测（B帧）</h3><ul>
+<li><p>H.261：不支持B帧，只支持I帧和P帧。</p>
+</li>
+<li><p>H.262：支持B帧，使用前后向预测。</p>
+</li>
+<li><p>H.263：支持B帧，使用前后向预测、前向预测和后向预测。</p>
+</li>
+</ul>
+<h3 id="7-8-I帧预测"><a href="#7-8-I帧预测" class="headerlink" title="7.8. I帧预测"></a>7.8. I帧预测</h3><ul>
+<li><p>H.261：没有I帧预测，只有P帧预测。</p>
+</li>
+<li><p>H.262：没有I帧预测，支持帧内DC系数（量化后残差系数）的预测。</p>
+</li>
+<li><p>H.263：没有I帧预测（没有使用预测模式称为INTRA模式）；在H.263+中的高级帧内编码模式中支持三种帧内预测模式（DC，水平预测和垂直预测）。</p>
+</li>
+</ul>
+<h3 id="7-9-参考帧"><a href="#7-9-参考帧" class="headerlink" title="7.9. 参考帧"></a>7.9. 参考帧</h3><ul>
+<li><p>H.261：P帧支持前向单参考预测；</p>
+</li>
+<li><p>H.262：P帧支持前向单参考预测，B帧可以有两个参考帧。</p>
+</li>
+<li><p>H.263：P帧支持前向预测，B帧可以有两个参考帧。在H.263+中的参考帧选择模式中支持多参考帧预测。</p>
+</li>
+</ul>
+<h3 id="7-10-量化参数"><a href="#7-10-量化参数" class="headerlink" title="7.10.   量化参数"></a>7.10.   量化参数</h3><ul>
+<li><p>H.261：量化参数为1-31，帧内dc系数的量化步长为8，其他系数的量化步长取值为2~62的偶数（量化步长是量化参数的2倍）。</p>
+</li>
+<li><p>H.262：量化参数为0-31，采用MPEG量化方法。</p>
+</li>
+<li><p>H.263：同H.261标准。</p>
+</li>
+</ul>
+<h2 id="8-FFmpeg中H-263编解码器的实现分析"><a href="#8-FFmpeg中H-263编解码器的实现分析" class="headerlink" title="8.   FFmpeg中H.263编解码器的实现分析"></a>8.   FFmpeg中H.263编解码器的实现分析</h2><p>在FFmpeg中支持H.263和H.263+编解码器，但不支持H.263++。</p>
+<h3 id="8-1-编码命令行"><a href="#8-1-编码命令行" class="headerlink" title="8.1. 编码命令行"></a>8.1. 编码命令行</h3><p>H.263编码：</p>
+<pre><code class="c">./ffmpeg -s 352x288  -pix_fmt  yuv420p -i bus_cif.yuv -an  -vcodec h263
+-b:v 128 -r 15   outfile.h263</code></pre>
+<p>H.263+编码：</p>
+<pre><code class="c">./ffmpeg -s 352x288  -pix_fmt  yuv420p -i bus_cif.yuv -an  -vcodec h263p
+-b:v 128 -r 15   outfile.h263</code></pre>
+<h3 id="8-2-H-263编码流程"><a href="#8-2-H-263编码流程" class="headerlink" title="8.2. H.263编码流程"></a>8.2. H.263编码流程</h3><p><img src="https://img-blog.csdnimg.cn/20200527092607971.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>1、注册组件（注册所有的编解码器）</p>
+<p>avcodec_register_all</p>
+<p>2、找到对应编码器</p>
+<p>avcodec_find_encoder</p>
+<p>3、打开ffmpeg的输入输出文件</p>
+<p>avcodec_open2</p>
+<p>4、编码</p>
+<p>avcodec_encode_video2</p>
+<p>ret = avctx-&gt;codec-&gt;encode2(avctx,<br>avpkt, frame, got_packet_ptr);</p>
+<p>5、释放</p>
+<p>avcodec_close</p>
+<p>avctx-&gt;codec-&gt;close(avctx);</p>
+<p><strong>初始化视频编码器：</strong></p>
+<p>ff_mpv_encode_init包括：</p>
+<p>ff_mpv_idct_init          //idct函数指针初始化</p>
+<p>ff_dct_encode_init       //dct函数指针初始化</p>
+<p>ff_h263_encode_init     //loopfilter函数指针初始化</p>
+<p><strong>视频编码：</strong></p>
+<p>ff_mpv_encode_picture包括：</p>
+<p>ff_alloc_picture             // 分配一帧图像</p>
+<p>ff_alloc_packet2            // 分配一帧码流数据</p>
+<p>encode_picture            // 编码一帧图像</p>
+<p>estimate_motion_thread             //</p>
+<p><strong>运动估计</strong></p>
+<p>ff_h263_encode_picture_header  // 编码图像头</p>
+<p>encode_thread::ff_h263_encode_gob_header         //编码GOB头</p>
+<p>encode_mb_hq:: encode_mb:: encode_mb_internal //编码一个宏块</p>
+<p>ff_h263_encode_mb    // 残差编码</p>
+<p>h263_encode_block</p>
+<p><strong>关闭视频编码器：</strong></p>
+<p>ff_mpv_encode_end包括：</p>
+<p>ff_rate_control_uninit</p>
+<p>ff_mpv_common_end</p>
+<h3 id="8-3-H-263解码流程"><a href="#8-3-H-263解码流程" class="headerlink" title="8.3. H.263解码流程"></a>8.3. H.263解码流程</h3><p><img src="https://img-blog.csdnimg.cn/20200527092630699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvYXJpbmdMZWVfZmlnaHRpbmc=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="9-总结"><a href="#9-总结" class="headerlink" title="9.   总结"></a>9.   总结</h2><p>H.263标准主要是面向低延时的视频通信应用场景，除了采用基于运动补偿的帧间预测和变换编码的混合框架外，还引入了4种可选的编码选项来提高编码效率；H.263+增加了12个可选的编码选项，H.263++增加了3个可选的编码选项，通过这些高级模式在扩大实际应用范围，进一步降低比特率、改善图像主观质量和增强抗误码能力等方面做出很多改进。</p>
+<h2 id="10-参考文献"><a href="#10-参考文献" class="headerlink" title="10.       参考文献"></a>10.       参考文献</h2><p>[1] Rate Control in DCT Video Coding for Low-Delay Communications，IEEE TCSVT， 1999.</p>
+<p>[2] T-REC-H.263-199603-S!!PDF-E.pdf</p>
+<p>[3] H.263标准文档(中文版).pdf</p>
+<p>[4] H.263+_Video Coding at Low Bit Rates, IEEE TCSVT, 1998.</p>
+<p>[5] T-REC-H.263-200011-S!AnnU!PDF-E.pdf</p>
+<p>[6] T-REC-H.263-200011-S!AnnV!PDF-E.pdf</p>
+<p>[7] T-REC-H.263-200011-S!AnnW!PDF-E.pdf</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2963033731@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>H.263&amp;H.263+标准研究总结</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">6.6k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Soaring Lee">Soaring Lee</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-06, 15:13:47</p>
+    <p><span class="copy-title">最后更新:</span>2021-06-14, 12:13:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/06/【Codecs系列】H.263_H.263+标准研究总结/" title="H.263&amp;H.263+标准研究总结">https://soaringleefighting.github.io/2020/07/06/【Codecs系列】H.263_H.263+标准研究总结/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var title = location.pathname.substr(0, 50);  // 截取字符串
+		var gitalk = new Gitalk({
+            clientID: 'a9777cdb7073ca9a0508',
+            clientSecret: 'e69e5ad937ab2c5e3b82fa7f1a5dfdb14441e9c0',
+            repo: 'soaringleefighting.github.io',
+            owner: 'soaringleefighting',
+            admin: ['soaringleefighting'],
+            id: title,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017-2021 SoaringLee
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1" ></script>
+
+<script src="/js/script.js?v=1" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 572px;
+    }
+    .nav.fullscreen {
+        margin-left: -572px;
+    }
+    .nav-left {
+        width: 150px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+<div id="musicMouseDrag" style="position:fixed; z-index: 9999; bottom: 0; right: 0;">
+    <div id="musicDragArea" style="position: absolute; top: 0; left: 0; width: 100%;height: 10px;cursor: move; z-index: 10;"></div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=421563082&auto=1&height=66"></iframe>
+</div>
+
+<!-- 以下代码是为了支持随时拖动音乐控件的位置，如没有需求，可去掉下面代码 -->
+<script>
+    var $DOC = $(document)
+    $('#musicMouseDrag').on ('mousedown', function (e) {
+      // 阻止文本选中
+      $DOC.bind ("selectstart", function () {
+        return false;
+      });
+      $('#musicDragArea').css ('height', '100%');
+      var $moveTarget = $('#musicMouseDrag');
+      $moveTarget.css ('border', '1px dashed grey')
+      var div_x = e.pageX - $moveTarget.offset ().left;
+      var div_y = e.pageY - $moveTarget.offset ().top;
+      $DOC.on ('mousemove', function (e) {
+        var targetX = e.pageX - div_x;
+        var targetY = e.pageY - div_y;
+        targetX = targetX < 0 ? 0 : (targetX + $moveTarget.outerWidth () >= window.innerWidth) ? window.innerWidth - $moveTarget.outerWidth () : targetX;
+        targetY = targetY < 0 ? 0 : (targetY + $moveTarget.outerHeight () >= window.innerHeight) ? window.innerHeight - $moveTarget.outerHeight () : targetY;
+        $moveTarget.css ({'left': targetX + 'px', 'top': targetY + 'px', 'bottom': 'inherit', 'right': 'inherit'})
+      }).on ('mouseup', function () {
+        $DOC.unbind ("selectstart");
+        $DOC.off ('mousemove')
+        $DOC.off ('mouseup')
+        $moveTarget.css ('border', 'none')
+        $('#musicDragArea').css ('height', '10px');
+      })
+    })
+</script>
+</html>
