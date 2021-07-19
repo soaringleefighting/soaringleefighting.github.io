@@ -20,3 +20,7 @@ This repository is created for posting blog with hexo and github pages. And This
 2021.6.14
 
 1>、支持在macOS平台上发布博客。
+
+2021.7.19
+
+1>、增加publish.sh脚本，支持一键发布。
