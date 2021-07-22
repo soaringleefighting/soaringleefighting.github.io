@@ -693,6 +693,8 @@ div.ac > ul.tag > li:before {
   color: rgba(255,255,255,0.7);
   transition: all 0.15s linear;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .nav-left ul li>div:hover {
   color: #f7f7f7;
@@ -717,10 +719,11 @@ div.ac > ul.tag > li:before {
   border-collapse: collapse;
   bottom: 0;
   width: 100%;
-  font-size: 17px;
+  font-size: 0;
   color: rgba(255,255,255,0.7);
 }
 .nav-left .left-bottom a {
+  font-size: 17px;
   display: table-cell;
   height: 30px;
   text-align: center;
@@ -734,7 +737,7 @@ div.ac > ul.tag > li:before {
 }
 .nav-left .left-bottom a.about.hasFriend {
   border-right: 1px solid #fff;
-  width: 49%;
+  width: calc(49% - 1px);
 }
 .nav-left .left-bottom a.friends {
   display: inline-block;
