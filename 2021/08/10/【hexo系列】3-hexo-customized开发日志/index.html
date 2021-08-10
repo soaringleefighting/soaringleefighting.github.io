@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>栈的基本操作及实现 | 飞翔的个人博客</title>
-  <meta name="keywords" content=" Data Structure ">
-  <meta name="description" content="栈的基本操作及实现 | 飞翔的个人博客">
+  <title>3-hexo-customized开发日志 | 飞翔的个人博客</title>
+  <meta name="keywords" content=" hexo ">
+  <meta name="description" content="3-hexo-customized开发日志 | 飞翔的个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于博主1、本人，电子与信息专业，擅长视频编解码、图像处理方向，了解C/C++、Python、Shell和Matlab语言，学习过电路、单片机和ARM开发，自学过Android和Java语言。目前主要从事视频编解码算法工作，并承接部分相关外包项目，倡导开源分享精神，期待与有识之士共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识">
 <meta name="keywords" content="CV Codecs Tools ImageProcessing">
@@ -1843,9 +1843,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-【数据结构系列】栈的基本操作及实现" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-【hexo系列】3-hexo-customized开发日志" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">栈的基本操作及实现</h1>
+        <h1 class="article-title">3-hexo-customized开发日志</h1>
     
     <div class="article-meta">
         
@@ -1855,9 +1855,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="技术">技术</a> > 
-            
-            <a  data-rel="技术&lt;---&gt;数据结构">数据结构</a>
+            <a  data-rel="工具">工具</a>
             
         </span>
         
@@ -1865,19 +1863,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Data Structure</a>
+            <a class="color5">hexo</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-06-14 12:13:44'>2020-04-21 20:33</time>
+            发布时间 : <time class="date" title='最后更新: 2021-08-10 21:47:52'>2021-08-10 11:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:903</span>
+        <span>字数:134</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1907,7 +1905,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、栈的定义"><span class="toc-text">1、栈的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、栈的两种存储结构及实现"><span class="toc-text">2、栈的两种存储结构及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、栈的应用"><span class="toc-text">3、栈的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1、-递归"><span class="toc-text">3.1、 递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2、-四则运算表达式求值"><span class="toc-text">3.2、 四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#THE-END"><span class="toc-text"> THE END! </span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Revision-History"><span class="toc-text">Revision History:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-7-8"><span class="toc-text">2020.7.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-7-11"><span class="toc-text">2020.7.11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-8-10"><span class="toc-text">2020.8.10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-8-1"><span class="toc-text">2021.8.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-8-8"><span class="toc-text">2021.8.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021-8-10"><span class="toc-text">2021.8.10</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1923,243 +1921,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><h2>本文目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、栈的定义"><span class="toc-text">1、栈的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、栈的两种存储结构及实现"><span class="toc-text">2、栈的两种存储结构及实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、栈的应用"><span class="toc-text">3、栈的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1、-递归"><span class="toc-text">3.1、 递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2、-四则运算表达式求值"><span class="toc-text">3.2、 四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#THE-END"><span class="toc-text"> THE END! </span></a></li></ol></div></p>
-<h2 id="1、栈的定义"><a href="#1、栈的定义" class="headerlink" title="1、栈的定义"></a>1、栈的定义</h2><p>栈的定义：<br>限定仅在表尾（指栈顶）进行插入和删除操作的线性表。<br>栈的插入操作称为 入栈；<br>栈的删除操作称为 出栈。</p>
-<p>栈是一种特殊的线性表，特殊之处在于其插入和删除只能在栈顶进行。</p>
-<h2 id="2、栈的两种存储结构及实现"><a href="#2、栈的两种存储结构及实现" class="headerlink" title="2、栈的两种存储结构及实现"></a>2、栈的两种存储结构及实现</h2><p>栈是一种线性表，因此也有两种实现：<br>1、顺序存储结构：顺序栈<br>2、链式存储结构：链栈</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+        <p>开源地址： <a href="https://github.com/soaringleefighting/3-hexo-customized" target="_blank" rel="noopener">https://github.com/soaringleefighting/3-hexo-customized</a></p>
+<h1 id="Revision-History"><a href="#Revision-History" class="headerlink" title="Revision History:"></a>Revision History:</h1><h2 id="2020-7-8"><a href="#2020-7-8" class="headerlink" title="2020.7.8"></a>2020.7.8</h2><p> <code>add</code>：<br> 1、添加3-hexo主题；</p>
+<h2 id="2020-7-11"><a href="#2020-7-11" class="headerlink" title="2020.7.11"></a>2020.7.11</h2><p> <code>feat</code>：<br> 1、支持gitalk评论设置；<br> 2、支持音乐盒插件自由拖动；</p>
+<h2 id="2020-8-10"><a href="#2020-8-10" class="headerlink" title="2020.8.10"></a>2020.8.10</h2><p><code>feat</code>：<br>1、支持代码复制功能。</p>
+<h2 id="2021-8-1"><a href="#2021-8-1" class="headerlink" title="2021.8.1"></a>2021.8.1</h2><p><code>add</code>：1、支持文章列表显示背景图像。</p>
+<h2 id="2021-8-8"><a href="#2021-8-8" class="headerlink" title="2021.8.8"></a>2021.8.8</h2><p><code>feat</code>：1、添加网站运行时间；2、修改音乐盒插件歌曲为《济南济南》；3、添加萌妹子配置。</p>
+<h2 id="2021-8-10"><a href="#2021-8-10" class="headerlink" title="2021.8.10"></a>2021.8.10</h2><p><code>feat</code>：1、添加博客加密功能，支持按tags加密，采用blink主题。</p>
 
-#define  MAX_DATA_SIZE  (100)
-typedef int SElemType;
-
-// 1.栈的顺序存储结构：顺序栈
-typedef struct SqStack
-{
-    SElemType data[MAX_DATA_SIZE];
-    int   top; // 表示栈顶指针
-} SqStack;
-
-// 1.1 入栈操作：将元素e插入到栈顶，栈长度加1
-int Stack_push(SqStack *S, SElemType e)
-{
-    if (S-&gt;top == MAX_DATA_SIZE-1) //表示栈满
-    {
-        printf(&quot;栈满, 无法入栈！\n&quot;);
-        return -1;
-    }
-
-    S-&gt;top++;
-    S-&gt;data[S-&gt;top] = e;
-
-    return 0;
-}
-
-
-// 1.2 出栈操作：将栈顶元素出栈，出栈元素值赋给e
-int Stack_pop(SqStack *S, int *e)
-{
-    if (S-&gt;top == -1) //空栈
-    {
-        printf(&quot;空栈, 无法出栈!\n&quot;);
-    }
-
-    *e = S-&gt;data[S-&gt;top];
-    S-&gt;top--;
-
-    return 0;
-}
-
-//  1.3 顺序栈的遍历输出：从栈顶到栈底
-int Stack_traverse(SqStack *S)
-{
-    int top_count = 0;
-    if(S-&gt;top == -1)
-    {
-        printf(&quot;空栈！\n&quot;);
-        return -1;
-    }
-
-    top_count = S-&gt;top;
-    while (top_count != -1)
-    {
-        printf(&quot;%d\t&quot;, S-&gt;data[top_count]);
-        top_count--;
-    }
-    printf(&quot;\n&quot;);
-}
-
-// 1.4 顺序栈的遍历输出：从栈底到栈顶
-int Stack_traverse_sequence(SqStack *S)
-{
-    int i = 0;
-    if(S-&gt;top == -1)
-    {
-        printf(&quot;空栈！\n&quot;);
-        return -1;
-    }
-
-    while (i &lt;= S-&gt;top)
-    {
-        printf(&quot;%d\t&quot;, S-&gt;data[i++]);
-    }
-    printf(&quot;\n&quot;);
-    return 0;
-
-}
-
-/* 1.5 返回S的元素个数，即栈的长度 */
-int Stack_length(SqStack *S)
-{
-    return S-&gt;top+1;
-}
-
-// 1.6 顺序栈获取栈顶元素
-int Stack_getTop(SqStack *S, int *e)
-{
-    if (S-&gt;top == -1)
-    {
-        printf(&quot;空栈!\n&quot;);
-    }
-
-    *e = S-&gt;data[S-&gt;top];
-
-    return 0;
-}
-
-/*  1.7 构造一个空栈S */
-int InitStack(SqStack *S)
-{
-    /* S.data=(SElemType *)malloc(MAXSIZE*sizeof(SElemType)); */
-    S-&gt;top=-1;
-    return 0;
-}
-
-/*  1.8 把S置为空栈 */
-int ClearStack(SqStack *S)
-{
-    S-&gt;top=-1;
-    return 0;
-}
-
-
-// 2. 栈的链式存储结构：链栈
-typedef struct StackNode
-{
-    SElemType data;
-    struct StackNode *next;
-} StackNode, *LinkStackPtr;
-
-typedef struct LinkStack
-{
-    LinkStackPtr top;
-    int count;
-} LinkStack;
-
-// 2.1 链栈的入栈操作
-int LinkStack_push(LinkStack *LS, SElemType e)
-{
-    LinkStackPtr s = (LinkStackPtr)malloc(sizeof(StackNode));
-    if (NULL == s)
-    {
-        printf(&quot;malloc failed!\n&quot;);
-        return -1;
-    }
-
-    s-&gt;data = e;
-    s-&gt;next = LS-&gt;top;
-    LS-&gt;top = s;
-    LS-&gt;count++;
-
-    return 0;
-}
-
-// 2.2 链栈的出栈操作
-int LinkStack_pop(LinkStack *LS, SElemType *e)
-{
-    LinkStackPtr p;
-
-    if (LS-&gt;top == -1)
-    {
-        printf(&quot;空栈!\n&quot;);
-        return -1;
-    }
-
-    *e = LS-&gt;top-&gt;data;  // 先取出出栈元素值
-    p = LS-&gt;top;         // 将栈顶结点赋值给p
-    LS-&gt;top = LS-&gt;top-&gt;next;
-    free(p);
-
-    LS-&gt;count--;
-    return 0;
-}
-
-
-// 栈的应用：Fibonacci数列
-int Fbi(int i)
-{
-    if (i &lt; 2)
-    {
-        return i == 0 ? 0 : 1;
-    }
-    return Fbi(i-1) + Fbi(i-2);
-}
-int main(int argc, char *argv[])
-{
-    int e = 0;
-
-    // 1、初始化空栈
-    SqStack SS;
-    //SS.top = -1;  
-    InitStack(&amp;SS);
-    Stack_traverse_sequence(&amp;SS);
-
-    // 2、入栈操作
-    Stack_push(&amp;SS, 1);
-    Stack_traverse_sequence(&amp;SS);
-
-    Stack_push(&amp;SS, 2);
-    Stack_traverse_sequence(&amp;SS);
-
-    Stack_push(&amp;SS, 3);
-    Stack_traverse_sequence(&amp;SS);
-
-    // 3、获取栈顶元素
-    Stack_getTop(&amp;SS, &amp;e);
-    printf(&quot;栈顶元素: %d\n&quot;, e);
-
-
-    // 4、出栈操作
-    Stack_pop(&amp;SS, &amp;e);
-    printf(&quot;出栈元素: %d\n&quot;, e);
-    Stack_traverse_sequence(&amp;SS);
-
-    Stack_pop(&amp;SS, &amp;e);
-    printf(&quot;出栈元素: %d\n&quot;, e);
-
-    Stack_traverse_sequence(&amp;SS);
-
-    Stack_pop(&amp;SS, &amp;e);
-    printf(&quot;出栈元素: %d\n&quot;, e);
-
-    Stack_traverse_sequence(&amp;SS);
-
-    // 5、栈的应用：递归实现
-    printf(&quot;%d&quot;, Fbi(5));
-    return 0;
-}</code></pre>
-<h2 id="3、栈的应用"><a href="#3、栈的应用" class="headerlink" title="3、栈的应用"></a>3、栈的应用</h2><h3 id="3-1、-递归"><a href="#3-1、-递归" class="headerlink" title="3.1、 递归"></a>3.1、 递归</h3><pre><code class="c">// 栈的应用：Fibonacci数列
-int Fbi(int i)
-{
-    if (i &lt; 2)
-    {
-        return i == 0 ? 0 : 1;
-    }
-    return Fbi(i-1) + Fbi(i-2);
-}</code></pre>
-<h3 id="3-2、-四则运算表达式求值"><a href="#3-2、-四则运算表达式求值" class="headerlink" title="3.2、 四则运算表达式求值"></a>3.2、 四则运算表达式求值</h3><p>1、后缀表达式求值<br>2、中缀表示式转后缀表达式</p>
-<hr>
-<h2 id="THE-END"><a href="#THE-END" class="headerlink" title=" THE END! "></a><font color="red"> <strong>THE END!</strong> </font></h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2963033731@qq.com </span>
     </div>
@@ -2172,12 +1941,12 @@ int Fbi(int i)
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>栈的基本操作及实现</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">945</span></p>
+    <p><span class="copy-title">文章标题:</span>3-hexo-customized开发日志</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">134</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Soaring Lee">Soaring Lee</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-04-21, 20:33:17</p>
-    <p><span class="copy-title">最后更新:</span>2021-06-14, 12:13:44</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/21/【数据结构系列】栈的基本操作及实现/" title="栈的基本操作及实现">https://soaringleefighting.github.io/2020/04/21/【数据结构系列】栈的基本操作及实现/</a>
+    <p><span class="copy-title">发布时间:</span>2021-08-10, 11:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2021-08-10, 21:47:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/08/10/【hexo系列】3-hexo-customized开发日志/" title="3-hexo-customized开发日志">https://soaringleefighting.github.io/2021/08/10/【hexo系列】3-hexo-customized开发日志/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>
