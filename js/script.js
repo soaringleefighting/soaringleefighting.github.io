@@ -1,3 +1,18 @@
+//点击事件
+function switchDarkMode() {
+	if ($('body').hasClass('dark')) {
+		$("#dark").html("🌞");
+		document.body.classList.remove('dark');
+		localStorage.setItem('noDark', '1');
+		localStorage.setItem('dark', '0');
+	} else {
+		$("#dark").html("🌙");
+		document.body.classList.add('dark');
+		localStorage.setItem('dark', '1');
+		localStorage.setItem('noDark', '0');
+	}
+}
+
 /*声明三个自定义js方法*/
 /*不区分大小写的判断包含， 用于搜索文章标题过滤文章*/
 jQuery.expr[':'].contains = function (a, i, m) {
