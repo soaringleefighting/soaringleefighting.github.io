@@ -15,6 +15,7 @@ function switchDarkMode() {
 }
 */
 
+/*
 const options = {
   bottom: '64px', // default: '32px'
   right: 'unset', // default: '32px'
@@ -29,8 +30,10 @@ const options = {
   autoMatchOsTheme: true // default: true
 }
 
+
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
+*/
 
 /*声明三个自定义js方法*/
 /*不区分大小写的判断包含， 用于搜索文章标题过滤文章*/
