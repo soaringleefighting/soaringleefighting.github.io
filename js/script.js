@@ -1,4 +1,5 @@
 //点击事件
+/*
 function switchDarkMode() {
 	if ($('body').hasClass('dark')) {
 		$("#dark").html("🌞");
@@ -12,6 +13,24 @@ function switchDarkMode() {
 		localStorage.setItem('noDark', '0');
 	}
 }
+*/
+
+const options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
 
 /*声明三个自定义js方法*/
 /*不区分大小写的判断包含， 用于搜索文章标题过滤文章*/
