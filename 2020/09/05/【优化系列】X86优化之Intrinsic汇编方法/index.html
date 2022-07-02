@@ -6,17 +6,20 @@
   <meta name="keywords" content=" X86 ">
   <meta name="description" content="X86优化之Intrinsic汇编方法 | 飞翔的个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
 <meta name="keywords" content="CV Codecs Tools ImageProcessing">
 <meta property="og:type" content="website">
-<meta property="og:title" content="我的相册">
-<meta property="og:url" content="https://soaringleefighting.github.io/photo/index.html">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://soaringleefighting.github.io/about/index.html">
 <meta property="og:site_name" content="飞翔的个人博客">
+<meta property="og:description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://soaringleefighting.github.io/photo/IMG_4482.jpg">
-<meta property="og:updated_time" content="2021-06-14T04:13:44.625Z">
+<meta property="og:image" content="http://wpa.qq.com/pa?p=2:1611969865:52">
+<meta property="og:updated_time" content="2022-01-02T08:16:28.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的相册">
-<meta name="twitter:image" content="https://soaringleefighting.github.io/photo/IMG_4482.jpg">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
+<meta name="twitter:image" content="http://wpa.qq.com/pa?p=2:1611969865:52">
 
 
 <link rel="icon" href="/img/1_soaringlee_fighting.jpg">
@@ -43,7 +46,7 @@
 
 <script src="/js/iconfont.js?v=1.0.1"></script>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.beian img{display:inline-block!important}</style><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.beian img{display:inline-block!important}</style></head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value>
@@ -1103,19 +1106,19 @@
         
         
         <a  class="全部文章 技术 优化 "
-           href="/2020/09/18/【优化系列】x86内联汇编demo/"
+           href="/2020/09/18/【优化系列】X86优化之GCC内联汇编/"
            data-tag="X86"
            data-author="" >
-            <span class="post-title" title="x86内联汇编demo">x86内联汇编demo</span>
+            <span class="post-title" title="X86优化之GCC内联汇编">X86优化之GCC内联汇编</span>
             <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
         </a>
         
         
         <a  class="全部文章 技术 优化 "
-           href="/2020/09/18/【优化系列】X86优化之GCC内联汇编/"
+           href="/2020/09/18/【优化系列】x86内联汇编demo/"
            data-tag="X86"
            data-author="" >
-            <span class="post-title" title="X86优化之GCC内联汇编">X86优化之GCC内联汇编</span>
+            <span class="post-title" title="x86内联汇编demo">x86内联汇编demo</span>
             <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
         </a>
         
@@ -1301,19 +1304,19 @@
         
         
         <a  class="全部文章 技术 数据结构 "
-           href="/2020/04/18/【数据结构系列】线性表的顺序存储结构的基本操作/"
+           href="/2020/04/18/【数据结构系列】编程之美：求子数组的最大和/"
            data-tag="Data Structure"
            data-author="" >
-            <span class="post-title" title="线性表的顺序存储结构的基本操作">线性表的顺序存储结构的基本操作</span>
+            <span class="post-title" title="编程之美：求子数组的最大和">编程之美：求子数组的最大和</span>
             <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
         </a>
         
         
         <a  class="全部文章 技术 数据结构 "
-           href="/2020/04/18/【数据结构系列】编程之美：求子数组的最大和/"
+           href="/2020/04/18/【数据结构系列】线性表的顺序存储结构的基本操作/"
            data-tag="Data Structure"
            data-author="" >
-            <span class="post-title" title="编程之美：求子数组的最大和">编程之美：求子数组的最大和</span>
+            <span class="post-title" title="线性表的顺序存储结构的基本操作">线性表的顺序存储结构的基本操作</span>
             <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
         </a>
         
@@ -1589,19 +1592,19 @@
         
         
         <a  class="全部文章 技术 视频处理 "
-           href="/2019/07/12/【Codecs系列】颜色空间转换CSConvert：RGB24转YUV420P/"
+           href="/2019/07/12/【Codecs系列】关于颜色空间转换的一个思考/"
            data-tag="Video,CSConvert"
            data-author="" >
-            <span class="post-title" title="颜色空间转换CSConvert：RGB24转YUV420">颜色空间转换CSConvert：RGB24转YUV420</span>
+            <span class="post-title" title="关于颜色空间转换的一个思考">关于颜色空间转换的一个思考</span>
             <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
         </a>
         
         
         <a  class="全部文章 技术 视频处理 "
-           href="/2019/07/12/【Codecs系列】关于颜色空间转换的一个思考/"
+           href="/2019/07/12/【Codecs系列】颜色空间转换CSConvert：RGB24转YUV420P/"
            data-tag="Video,CSConvert"
            data-author="" >
-            <span class="post-title" title="关于颜色空间转换的一个思考">关于颜色空间转换的一个思考</span>
+            <span class="post-title" title="颜色空间转换CSConvert：RGB24转YUV420">颜色空间转换CSConvert：RGB24转YUV420</span>
             <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
         </a>
         
@@ -1696,20 +1699,20 @@
         </a>
         
         
-        <a  class="全部文章 读书 读书笔记 "
-           href="/2019/02/10/【Books系列】2019年第一本书：大冰《好吗好的》读书笔记和读后感/"
-           data-tag="Books"
-           data-author="" >
-            <span class="post-title" title="大冰《好吗好的》读书笔记和读后感">大冰《好吗好的》读书笔记和读后感</span>
-            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
-        </a>
-        
-        
         <a  class="全部文章 生活 随笔 "
            href="/2019/02/10/【Life系列】我奋斗了18年才和你坐在一起喝咖啡/"
            data-tag="Life"
            data-author="" >
             <span class="post-title" title="我奋斗了18年才和你坐在一起喝咖啡">我奋斗了18年才和你坐在一起喝咖啡</span>
+            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/02/10/【Books系列】2019年第一本书：大冰《好吗好的》读书笔记和读后感/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="大冰《好吗好的》读书笔记和读后感">大冰《好吗好的》读书笔记和读后感</span>
             <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
         </a>
         
@@ -1759,20 +1762,20 @@
         </a>
         
         
-        <a  class="全部文章 工具 Linux工具 "
-           href="/2018/12/08/【Tools系列】vim编辑器快捷键使用方法/"
-           data-tag="linux"
-           data-author="" >
-            <span class="post-title" title="vim编辑器快捷键使用方法">vim编辑器快捷键使用方法</span>
-            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
-        </a>
-        
-        
         <a  class="全部文章 工具 "
            href="/2018/12/08/【Tools系列】hello-world/"
            data-tag="hexo"
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 Linux工具 "
+           href="/2018/12/08/【Tools系列】vim编辑器快捷键使用方法/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="vim编辑器快捷键使用方法">vim编辑器快捷键使用方法</span>
             <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
         </a>
         
@@ -1814,19 +1817,19 @@
         
         
         <a  class="全部文章 技术 工程化 "
-           href="/2018/11/13/【android】Android平台通用编译环境/"
+           href="/2018/11/13/【android】Android平台编译makefile编写规则/"
            data-tag="Android"
            data-author="" >
-            <span class="post-title" title="Android平台通用编译环境">Android平台通用编译环境</span>
+            <span class="post-title" title="Android平台编译makefile编写规则">Android平台编译makefile编写规则</span>
             <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
         </a>
         
         
         <a  class="全部文章 技术 工程化 "
-           href="/2018/11/13/【android】Android平台编译makefile编写规则/"
+           href="/2018/11/13/【android】Android平台通用编译环境/"
            data-tag="Android"
            data-author="" >
-            <span class="post-title" title="Android平台编译makefile编写规则">Android平台编译makefile编写规则</span>
+            <span class="post-title" title="Android平台通用编译环境">Android平台通用编译环境</span>
             <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
         </a>
         
@@ -1940,6 +1943,24 @@
         
         
         <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】Some ways of Migrating code from ARM32 to AArch64/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="Some ways of Migrating code from ARM32 to AArch64">Some ways of Migrating code from ARM32 to AArch64</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构64位（AArch64）汇编优化总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构64位(AArch64)汇编优化总结">ARM架构64位(AArch64)汇编优化总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
            href="/2018/08/18/【arm】arm架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册/"
            data-tag="ARM"
            data-author="" >
@@ -1949,10 +1970,10 @@
         
         
         <a  class="全部文章 技术 优化 "
-           href="/2018/08/18/【arm】arm32位和arm64位架构、寄存器和指令差异分析总结/"
+           href="/2018/08/18/【ARM系列】Thumb状态分析以及ARM与Thumb之间的状态转换/"
            data-tag="ARM"
            data-author="" >
-            <span class="post-title" title="arm32位和arm64位架构、寄存器和指令差异分析总结">arm32位和arm64位架构、寄存器和指令差异分析总结</span>
+            <span class="post-title" title="ARM与Thumb之间的状态转换">ARM与Thumb之间的状态转换</span>
             <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
         </a>
         
@@ -1976,28 +1997,10 @@
         
         
         <a  class="全部文章 技术 优化 "
-           href="/2018/08/18/【ARM系列】Some ways of Migrating code from ARM32 to AArch64/"
+           href="/2018/08/18/【arm】arm32位和arm64位架构、寄存器和指令差异分析总结/"
            data-tag="ARM"
            data-author="" >
-            <span class="post-title" title="Some ways of Migrating code from ARM32 to AArch64">Some ways of Migrating code from ARM32 to AArch64</span>
-            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
-        </a>
-        
-        
-        <a  class="全部文章 技术 优化 "
-           href="/2018/08/18/【arm】arm架构64位（AArch64）汇编优化总结/"
-           data-tag="ARM"
-           data-author="" >
-            <span class="post-title" title="ARM架构64位(AArch64)汇编优化总结">ARM架构64位(AArch64)汇编优化总结</span>
-            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
-        </a>
-        
-        
-        <a  class="全部文章 技术 优化 "
-           href="/2018/08/18/【ARM系列】Thumb状态分析以及ARM与Thumb之间的状态转换/"
-           data-tag="ARM"
-           data-author="" >
-            <span class="post-title" title="ARM与Thumb之间的状态转换">ARM与Thumb之间的状态转换</span>
+            <span class="post-title" title="arm32位和arm64位架构、寄存器和指令差异分析总结">arm32位和arm64位架构、寄存器和指令差异分析总结</span>
             <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
         </a>
         
@@ -2065,20 +2068,20 @@
         </a>
         
         
-        <a  class="全部文章 技术 编解码 "
-           href="/2018/05/28/【Codecs系列】视频编码中的块效应、振铃效应和呼吸效应分析/"
-           data-tag="Codecs"
-           data-author="" >
-            <span class="post-title" title="视频编码中的块效应、振铃效应和呼吸效应分析">视频编码中的块效应、振铃效应和呼吸效应分析</span>
-            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
-        </a>
-        
-        
         <a  class="全部文章 技术 视频处理 "
            href="/2018/05/28/【Codecs系列】YUV处理工具：文件拼接功能/"
            data-tag="YUV"
            data-author="" >
             <span class="post-title" title="YUV处理工具：文件拼接">YUV处理工具：文件拼接</span>
+            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/05/28/【Codecs系列】视频编码中的块效应、振铃效应和呼吸效应分析/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="视频编码中的块效应、振铃效应和呼吸效应分析">视频编码中的块效应、振铃效应和呼吸效应分析</span>
             <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
         </a>
         
@@ -2102,19 +2105,19 @@
         
         
         <a  class="全部文章 技术 编程语言 "
-           href="/2018/05/08/【Python系列】Python中获取当前目录和子目录下所有文件或指定文件的方法/"
+           href="/2018/05/08/【Python系列】Python中执行可执行文件的四种方法/"
            data-tag="Python"
            data-author="" >
-            <span class="post-title" title="Python中获取当前目录和子目录下所有文件或指定文件的方法">Python中获取当前目录和子目录下所有文件或指定文件的方法</span>
+            <span class="post-title" title="Python中执行可执行文件的四种方法">Python中执行可执行文件的四种方法</span>
             <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
         </a>
         
         
         <a  class="全部文章 技术 编程语言 "
-           href="/2018/05/08/【Python系列】Python中执行可执行文件的四种方法/"
+           href="/2018/05/08/【Python系列】Python中获取当前目录和子目录下所有文件或指定文件的方法/"
            data-tag="Python"
            data-author="" >
-            <span class="post-title" title="Python中执行可执行文件的四种方法">Python中执行可执行文件的四种方法</span>
+            <span class="post-title" title="Python中获取当前目录和子目录下所有文件或指定文件的方法">Python中获取当前目录和子目录下所有文件或指定文件的方法</span>
             <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
         </a>
         
