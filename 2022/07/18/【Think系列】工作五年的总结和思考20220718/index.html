@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>毕业五年的总结和思考20220718 | 飞翔的个人博客</title>
+  <meta name="keywords" content=" Think ">
+  <meta name="description" content="毕业五年的总结和思考20220718 | 飞翔的个人博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
+<meta name="keywords" content="CV Codecs Tools ImageProcessing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://soaringleefighting.github.io/about/index.html">
+<meta property="og:site_name" content="飞翔的个人博客">
+<meta property="og:description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wpa.qq.com/pa?p=2:1611969865:52">
+<meta property="og:updated_time" content="2022-01-02T08:16:28.793Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="关于博主1、本人，信息与信息处理专业 硕士，擅长视频编解码、图像处理和算法优化方向，使用C/C++、Python和Matlab语言编程。目前主要从事视频编解码算法研发工作，并承接部分相关外包项目，期待与您共同交流学习！2、本博客主要是本人在工作学习过程中总结整理的技术知识和感想，旨在积累记录自己的技术成长历程和分享技术知识，谢绝转载！若未经博主同意转载，博主保留法律追究的权利。3、本人提供付费咨询">
+<meta name="twitter:image" content="http://wpa.qq.com/pa?p=2:1611969865:52">
+
+
+<link rel="icon" href="/img/1_soaringlee_fighting.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.0.1"></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.beian img{display:inline-block!important}</style><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.beian img{display:inline-block!important}</style></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value>
+  <input class="theme_blog_path" value>
+  <input id="theme_shortcut" value="true">
+  <input id="theme_highlight_on" value="true">
+  <input id="theme_code_copy" value="true">
+</div>
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/1_soaringlee_fighting.jpg" />
+</a>
+<div class="author">
+    <span>Soaring Lee</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/soaringleefighting" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="twitter" href="https://music.163.com/#/playlist?id=797834576" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/6622396175" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/8d35be99fa13" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="csdn" href="https://blog.csdn.net/SoaringLee_fighting" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:2963033731@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=2963033731&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/playlist?id=797834576" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(166)</small></div></li>
+    
+        
+            
+            <li><div data-rel="技术"><i class="fold iconfont icon-right"></i>技术<small>(106)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="技术<--->Bugfix">Bugfix<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->Web">Web<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->优化">优化<small>(22)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->图像处理">图像处理<small>(8)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->工程化">工程化<small>(17)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->开源项目">开源项目<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->数据结构">数据结构<small>(6)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->视频处理">视频处理<small>(15)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->编程语言">编程语言<small>(8)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="技术<--->编解码">编解码<small>(20)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(31)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="工具<--->Linux工具">Linux工具<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->macOS工具">macOS工具<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->多线程编程">多线程编程<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->编译工具">编译工具<small>(7)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->自动化脚本">自动化脚本<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="工具<--->调试工具">调试工具<small>(6)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(14)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="读书<--->书单">书单<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="读书<--->读书笔记">读书笔记<small>(10)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(14)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="生活<--->规划">规划<small>(11)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="生活<--->随笔">随笔<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="生活<--->音乐">音乐<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="产品"><i class="fold iconfont icon-right"></i>产品<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="产品<--->视频会议">视频会议<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="166">
+<input type="hidden" id="yelog_site_word_count" value="86.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/listener51">小马哥博客</a></li>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/leixiaohua1020">雷霄骅(leixiaohua1020)的专栏</a></li>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/abcjennifer">Rachel Zhang的专栏</a></li>
+            
+            <li><a target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=797834576">我的网易云音乐</a></li>
+            
+            <li><a target="_blank" href="http://www.kugou.com/fmweb/html/index.html">我的酷狗音乐</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Android</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ARM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AVS+</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Books</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Bugs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CMake</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Codecs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Conda</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSConvert</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CV</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cygwin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Data Structure</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DSP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FFMPEG</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Gnu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>gprof</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>H263</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HEVC</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ios</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Life</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>macOS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>makefile</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>meson</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MinGW</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MIPS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mount</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MPEG2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Plan</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReadingList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>sample</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SecureCRT</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Solaris</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Think</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Tools</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>valgrind</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Video</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Wasm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>windbg</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>X86</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>YUV</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>吉他</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>年终总结</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>批处理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>视频会议</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 读书 书单 "
+           href="/2022/01/02/【Books系列】2022年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2022年阅读书单">2022年阅读书单</span>
+            <span class="post-date" title="2022-01-02 14:30:00">2022/01/02</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2021/08/10/【hexo系列】3-hexo-customized开发日志/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo-customized开发日志-持续更新">3-hexo-customized开发日志-持续更新</span>
+            <span class="post-date" title="2021-08-10 11:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 技术 开源项目 "
+           href="/2020/09/06/【工程化系列】X86&ARM汇编模板AssemblySample/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="汇编优化模板_AssemblySample">汇编优化模板_AssemblySample</span>
+            <span class="post-date" title="2020-09-06 10:57:47">2020/09/06</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 技术 开源项目 "
+           href="/2020/06/22/【工程化系列】全平台编译模板MakefileSample/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="全平台编译模板_MakefileSample">全平台编译模板_MakefileSample</span>
+            <span class="post-date" title="2020-06-22 15:13:47">2020/06/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2022/07/18/【Think系列】工作五年的总结和思考20220718/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业五年的总结和思考20220718">毕业五年的总结和思考20220718</span>
+            <span class="post-date" title="2022-07-18 15:13:47">2022/07/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2022/05/28/【Python系列】自动提取特定格式的txt文本数据到excel中/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动提取特定格式的txt文本数据到excel中">自动提取特定格式的txt文本数据到excel中</span>
+            <span class="post-date" title="2022-05-28 15:13:47">2022/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2022/05/25/【Books系列】2022年：《慢慢变富》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《慢慢变富》读书笔记">《慢慢变富》读书笔记</span>
+            <span class="post-date" title="2022-05-25 21:30:00">2022/05/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2022/03/28/【Tools系列】CMake入门基础（1）：CMake语法/"
+           data-tag="CMake"
+           data-author="" >
+            <span class="post-title" title="CMake入门基础（1）：CMake语法">CMake入门基础（1）：CMake语法</span>
+            <span class="post-date" title="2022-03-28 15:13:47">2022/03/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2022/01/23/【Books系列】2022年：《拼职场》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《拼职场》读书笔记">《拼职场》读书笔记</span>
+            <span class="post-date" title="2022-01-23 21:30:00">2022/01/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2022/01/08/【Codecs系列】H.265:HEVC视频编码技术/"
+           data-tag="Codecs,HEVC"
+           data-author="" >
+            <span class="post-title" title="H.265/HEVC视频编码技术">H.265/HEVC视频编码技术</span>
+            <span class="post-date" title="2022-01-08 22:16:00">2022/01/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2022/01/03/【总结系列】2021年终总结/"
+           data-tag="年终总结"
+           data-author="" >
+            <span class="post-title" title="2021年终总结">2021年终总结</span>
+            <span class="post-date" title="2022-01-03 21:03:00">2022/01/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/12/31/【Codecs系列】HEVC标准（六）：码率控制模型(R-λ Model)/"
+           data-tag="Codecs,HEVC"
+           data-author="" >
+            <span class="post-title" title="HEVC标准（六）：码率控制模型(R-λ Model)">HEVC标准（六）：码率控制模型(R-λ Model)</span>
+            <span class="post-date" title="2021-12-31 15:13:47">2021/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2021/12/08/【Books系列】2021年：白岩松《白说》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="白岩松《白说》读书笔记">白岩松《白说》读书笔记</span>
+            <span class="post-date" title="2021-12-08 22:45:00">2021/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2021/11/28/【Books系列】2021年：蔡崇达《皮囊》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="蔡崇达《皮囊》读书笔记">蔡崇达《皮囊》读书笔记</span>
+            <span class="post-date" title="2021-11-28 22:45:00">2021/11/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2021/11/26/【汇编优化系列】关于符号扩展和无符号扩展(包括mips msa实现)/"
+           data-tag="MIPS"
+           data-author="" >
+            <span class="post-title" title="关于符号扩展和无符号扩展的mips实现">关于符号扩展和无符号扩展的mips实现</span>
+            <span class="post-date" title="2021-11-26 16:00:00">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2021/11/17/【优化系列】MIPS架构MSA Intrinsic优化/"
+           data-tag="MIPS"
+           data-author="" >
+            <span class="post-title" title="MIPS架构MSA Intrinsic优化">MIPS架构MSA Intrinsic优化</span>
+            <span class="post-date" title="2021-11-17 22:00:00">2021/11/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/11/14/【Codecs系列】FFmpeg支持AVS+解码功能/"
+           data-tag="Codecs,AVS+"
+           data-author="" >
+            <span class="post-title" title="FFmpeg支持AVS+解码功能">FFmpeg支持AVS+解码功能</span>
+            <span class="post-date" title="2021-11-14 15:13:47">2021/11/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 Bugfix "
+           href="/2021/10/25/【Debug系列】SIGILL（Illegal instruction）问题定位/"
+           data-tag="Bugs"
+           data-author="" >
+            <span class="post-title" title="SIGILL（Illegal instruction）问题定位">SIGILL（Illegal instruction）问题定位</span>
+            <span class="post-date" title="2021-10-25 20:07:17">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2021/10/14/【Tools系列】docker镜像和容器基本操作/"
+           data-tag="Tools,docker"
+           data-author="" >
+            <span class="post-title" title="docker镜像和容器基本操作">docker镜像和容器基本操作</span>
+            <span class="post-date" title="2021-10-14 15:13:47">2021/10/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/09/28/【Codecs系列】AVS+（AVS1 P16）解码器/"
+           data-tag="Codecs,AVS+"
+           data-author="" >
+            <span class="post-title" title="AVS+（AVS1 P16）解码器">AVS+（AVS1 P16）解码器</span>
+            <span class="post-date" title="2021-09-28 15:13:47">2021/09/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2021/09/02/【Books系列】2021年：《断舍离》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《断舍离》读书笔记">《断舍离》读书笔记</span>
+            <span class="post-date" title="2021-09-02 10:23:00">2021/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 Bugfix "
+           href="/2021/08/20/【Bugfix系列】库和头文件不对应引起的运行异常（典型）/"
+           data-tag="Bugs"
+           data-author="" >
+            <span class="post-title" title="库和头文件不对应引起的运行异常（典型）">库和头文件不对应引起的运行异常（典型）</span>
+            <span class="post-date" title="2021-08-20 20:07:17">2021/08/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2021/08/12/【工程化系列】Meson编译系统使用方法/"
+           data-tag="meson"
+           data-author="" >
+            <span class="post-title" title="Meson编译系统使用方法">Meson编译系统使用方法</span>
+            <span class="post-date" title="2021-08-12 19:30:00">2021/08/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/08/11/【Codecs系列】H.266开源编解码器：vvenc和vvdec介绍/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="H.266开源编解码器：vvenc和vvdec介绍">H.266开源编解码器：vvenc和vvdec介绍</span>
+            <span class="post-date" title="2021-08-11 17:30:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2021/08/07/【优化系列】MIPS架构汇编优化总结/"
+           data-tag="MIPS"
+           data-author="" >
+            <span class="post-title" title="MIPS架构汇编优化总结">MIPS架构汇编优化总结</span>
+            <span class="post-date" title="2021-08-07 16:00:00">2021/08/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2021/08/01/【开源项目】编解码自动化测试脚本：autoCodecTest/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="编解码自动化测试脚本：autoCodecTest">编解码自动化测试脚本：autoCodecTest</span>
+            <span class="post-date" title="2021-08-01 15:13:47">2021/08/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/08/01/【Codecs系列】面向低延迟媒体服务的Codec编码优化/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="面向低延迟媒体服务的Codec编码优化">面向低延迟媒体服务的Codec编码优化</span>
+            <span class="post-date" title="2021-08-01 12:13:47">2021/08/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 macOS工具 "
+           href="/2021/07/17/【Tools系列】macOS终端配置：zsh+iTerm2+OhMyZsh/"
+           data-tag="macOS"
+           data-author="" >
+            <span class="post-title" title="macOS终端配置：zsh+iTerm2+OhMyZsh">macOS终端配置：zsh+iTerm2+OhMyZsh</span>
+            <span class="post-date" title="2021-07-17 15:13:47">2021/07/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2021/06/28/【Think系列】写于毕业四周年之际_2021年/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="写于毕业四周年之际_2021年">写于毕业四周年之际_2021年</span>
+            <span class="post-date" title="2021-06-28 21:03:00">2021/06/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/06/14/【Codecs系列】基于AI的编码Codec何时到来？/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="基于AI的编码Codec何时到来？">基于AI的编码Codec何时到来？</span>
+            <span class="post-date" title="2021-06-14 12:13:47">2021/06/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 Web "
+           href="/2021/06/08/【Web系列】WebAssembly(wasm)基础知识/"
+           data-tag="Wasm"
+           data-author="" >
+            <span class="post-title" title="WebAssembly(wasm)基础知识">WebAssembly(wasm)基础知识</span>
+            <span class="post-date" title="2021-06-08 10:00:47">2021/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 Web "
+           href="/2021/06/06/【优化系列】WebAssembly(wasm) SIMD优化/"
+           data-tag="Wasm"
+           data-author="" >
+            <span class="post-title" title="WebAssembly(wasm) SIMD优化">WebAssembly(wasm) SIMD优化</span>
+            <span class="post-date" title="2021-06-06 22:10:17">2021/06/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2021/05/19/【ARM系列】arm neon intrinsic方式编写arm32位汇编/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="arm neon intrinsic方式编写arm32位汇编">arm neon intrinsic方式编写arm32位汇编</span>
+            <span class="post-date" title="2021-05-19 15:13:47">2021/05/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 产品 视频会议 "
+           href="/2021/03/20/【视频会议系列】亿联视频会议产品矩阵简介/"
+           data-tag="视频会议"
+           data-author="" >
+            <span class="post-title" title="亿联视频会议产品矩阵简介">亿联视频会议产品矩阵简介</span>
+            <span class="post-date" title="2021-03-20 13:13:47">2021/03/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 书单 "
+           href="/2021/02/13/【Books系列】2021年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2021年阅读书单">2021年阅读书单</span>
+            <span class="post-date" title="2021-02-13 13:13:47">2021/02/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/01/10/【Codecs系列】H.264参考帧队列管理机制：初始化、重排序和标记/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="H.264参考帧队列管理机制：初始化、重排序和标记">H.264参考帧队列管理机制：初始化、重排序和标记</span>
+            <span class="post-date" title="2021-01-10 15:13:47">2021/01/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2021/01/04/【Codecs系列】H.264时域SVC（SVC-T）编码技术/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="H.264时域SVC（SVC-T）编码技术">H.264时域SVC（SVC-T）编码技术</span>
+            <span class="post-date" title="2021-01-04 15:13:47">2021/01/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2021/01/03/【总结系列】2020年终总结/"
+           data-tag="年终总结"
+           data-author="" >
+            <span class="post-title" title="2020年终总结">2020年终总结</span>
+            <span class="post-date" title="2021-01-03 13:13:47">2021/01/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2020/12/28/【Tools系列】git rebase和git merge用法详解/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="git rebase和git merge用法详解">git rebase和git merge用法详解</span>
+            <span class="post-date" title="2020-12-28 22:00:47">2020/12/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2020/12/25/【Tools系列】在Win7系统上利用Simics安装Solaris 8 SPARC操作系统/"
+           data-tag="Solaris"
+           data-author="" >
+            <span class="post-title" title="在Win7系统上利用Simics安装Solaris 8 SPARC操作系统">在Win7系统上利用Simics安装Solaris 8 SPARC操作系统</span>
+            <span class="post-date" title="2020-12-25 22:00:47">2020/12/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2020/11/29/【Codecs系列】Socionext芯片SC2000系统架构简介/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="Socionext芯片SC2000系统架构简介">Socionext芯片SC2000系统架构简介</span>
+            <span class="post-date" title="2020-11-29 15:13:47">2020/11/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2020/10/23/【Tools系列】SecureCRT文件传输模式之Zmodem/"
+           data-tag="SecureCRT"
+           data-author="" >
+            <span class="post-title" title="SecureCRT文件传输模式之Zmodem">SecureCRT文件传输模式之Zmodem</span>
+            <span class="post-date" title="2020-10-23 22:00:47">2020/10/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/10/01/【优化系列】ARM优化之内联汇编（inline）优化方法/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM优化之内联汇编（inline）优化方法">ARM优化之内联汇编（inline）优化方法</span>
+            <span class="post-date" title="2020-10-01 20:07:17">2020/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/18/【优化系列】X86优化之GCC内联汇编/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之GCC内联汇编">X86优化之GCC内联汇编</span>
+            <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/18/【优化系列】x86内联汇编demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="x86内联汇编demo">x86内联汇编demo</span>
+            <span class="post-date" title="2020-09-18 20:07:17">2020/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/16/【优化系列】ARM优化之Intrinsic汇编方法/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构优化之Intrinsic汇编方法">ARM架构优化之Intrinsic汇编方法</span>
+            <span class="post-date" title="2020-09-16 20:07:17">2020/09/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/05/【优化系列】X86优化之Intrinsic汇编方法/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之Intrinsic汇编方法">X86优化之Intrinsic汇编方法</span>
+            <span class="post-date" title="2020-09-05 20:07:17">2020/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/09/05/【优化系列】X86优化之Intrinsic汇编demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之Intrinsic汇编demo">X86优化之Intrinsic汇编demo</span>
+            <span class="post-date" title="2020-09-05 20:07:17">2020/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2020/08/16/【工程化系列】C语言编程规范/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言编程规范">C语言编程规范</span>
+            <span class="post-date" title="2020-08-16 15:13:47">2020/08/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2020/08/02/【工程化系列】linux下编译makefile将宏参数传递给C文件/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="linux下编译makefile将宏参数传递给C文件">linux下编译makefile将宏参数传递给C文件</span>
+            <span class="post-date" title="2020-08-02 15:13:47">2020/08/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2020/07/31/【C++系列】C++类中引用另一个类内的指针变量/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++类中引用另一个类内的指针变量">C++类中引用另一个类内的指针变量</span>
+            <span class="post-date" title="2020-07-31 15:13:47">2020/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2020/07/31/【CV系列】积分图算法/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="积分图算法">积分图算法</span>
+            <span class="post-date" title="2020-07-31 10:45:47">2020/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2020/07/25/【Books系列】《亲爱的安德烈》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《亲爱的安德烈》读书笔记">《亲爱的安德烈》读书笔记</span>
+            <span class="post-date" title="2020-07-25 11:13:47">2020/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2020/07/24/【Tools系列】利用性能分析工具valgrind+KCachegrind分析/"
+           data-tag="valgrind"
+           data-author="" >
+            <span class="post-title" title="利用性能分析工具valgrind+KCachegrind分析">利用性能分析工具valgrind+KCachegrind分析</span>
+            <span class="post-date" title="2020-07-24 16:25:47">2020/07/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2020/07/19/【Python系列】使用VScode+Anaconda搭建舒服的Python环境/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="使用VScode+Anaconda搭建舒服的Python环境">使用VScode+Anaconda搭建舒服的Python环境</span>
+            <span class="post-date" title="2020-07-19 22:00:47">2020/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2020/07/11/【Tools系列】Git常用命令/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git常用命令">Git常用命令</span>
+            <span class="post-date" title="2020-07-11 22:00:47">2020/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2020/07/11/【Tools系列】gitalk评论报错Error_Validation_Failed/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="gitalk评论报错Error_Validation_Failed">gitalk评论报错Error_Validation_Failed</span>
+            <span class="post-date" title="2020-07-11 14:45:47">2020/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2020/07/07/【工程化系列】CSConvertKit&YUVProcessKit/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="CSConvertKit&amp;YUVProcessKit">CSConvertKit&amp;YUVProcessKit</span>
+            <span class="post-date" title="2020-07-07 15:13:47">2020/07/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2020/07/06/【Codecs系列】H.263_H.263+标准研究总结/"
+           data-tag="Codecs,H263"
+           data-author="" >
+            <span class="post-title" title="H.263&amp;H.263+标准研究总结">H.263&amp;H.263+标准研究总结</span>
+            <span class="post-date" title="2020-07-06 15:13:47">2020/07/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2020/06/30/【Think系列】工作三年的总结和思考20200630/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业三年的总结和思考20200630">毕业三年的总结和思考20200630</span>
+            <span class="post-date" title="2020-06-30 15:13:47">2020/06/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/06/13/【优化系列】x86asm汇编优化demo/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86ASM汇编优化demo">X86ASM汇编优化demo</span>
+            <span class="post-date" title="2020-06-13 20:07:17">2020/06/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2020/06/05/【Codecs系列】HEVC-SCC（二）：IBC编码技术/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="HEVC-SCC（二）：IBC编码技术">HEVC-SCC（二）：IBC编码技术</span>
+            <span class="post-date" title="2020-06-05 12:13:47">2020/06/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2020/06/04/【Codecs系列】HEVC-SCC（一）：核心技术介绍/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="HEVC-SCC（一）：核心技术介绍">HEVC-SCC（一）：核心技术介绍</span>
+            <span class="post-date" title="2020-06-04 12:13:47">2020/06/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/28/【数据结构系列】查找算法及其实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="查找算法及其实现">查找算法及其实现</span>
+            <span class="post-date" title="2020-04-28 22:00:00">2020/04/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/21/【数据结构系列】队列的基本操作及实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="队列的基本操作及实现">队列的基本操作及实现</span>
+            <span class="post-date" title="2020-04-21 22:00:00">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/21/【数据结构系列】栈的基本操作及实现/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="栈的基本操作及实现">栈的基本操作及实现</span>
+            <span class="post-date" title="2020-04-21 20:33:17">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/18/【数据结构系列】线性表的顺序存储结构的基本操作/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="线性表的顺序存储结构的基本操作">线性表的顺序存储结构的基本操作</span>
+            <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/18/【数据结构系列】编程之美：求子数组的最大和/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="编程之美：求子数组的最大和">编程之美：求子数组的最大和</span>
+            <span class="post-date" title="2020-04-18 20:33:17">2020/04/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 数据结构 "
+           href="/2020/04/14/【数据结构系列】单链表的基本操作/"
+           data-tag="Data Structure"
+           data-author="" >
+            <span class="post-title" title="单链表的基本操作">单链表的基本操作</span>
+            <span class="post-date" title="2020-04-14 20:33:17">2020/04/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 Bugfix "
+           href="/2020/03/14/【Bugfix系列】一个int变量引起的随机数异常问题/"
+           data-tag="Bugs"
+           data-author="" >
+            <span class="post-title" title="一个int变量引起的随机数异常问题">一个int变量引起的随机数异常问题</span>
+            <span class="post-date" title="2020-03-14 20:07:17">2020/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2020/02/17/【优化系列】X86优化之纯汇编优化方法/"
+           data-tag="X86"
+           data-author="" >
+            <span class="post-title" title="X86优化之纯汇编优化方法">X86优化之纯汇编优化方法</span>
+            <span class="post-date" title="2020-02-17 20:07:17">2020/02/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 随笔 "
+           href="/2020/02/17/【Life系列】一个人最好的生活状态/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="一个人最好的生活状态">一个人最好的生活状态</span>
+            <span class="post-date" title="2020-02-17 15:13:47">2020/02/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2020/02/08/【Scripts系列】makefile中_-_符号和_@_符号的使用/"
+           data-tag="makefile,Tools"
+           data-author="" >
+            <span class="post-title" title="makefile中_-_符号和_@_符号的使用">makefile中_-_符号和_@_符号的使用</span>
+            <span class="post-date" title="2020-02-08 20:01:47">2020/02/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 书单 "
+           href="/2020/01/28/【Books系列】2020年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2020年阅读书单">2020年阅读书单</span>
+            <span class="post-date" title="2020-01-28 22:13:47">2020/01/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2020/01/28/【Books系列】《月童度河》摘抄及读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《月童度河》摘抄及读书笔记">《月童度河》摘抄及读书笔记</span>
+            <span class="post-date" title="2020-01-28 15:13:47">2020/01/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/11/20/【Life系列】济南 VS. 合肥 综合调研报告/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="济南 VS. 合肥 综合调研报告">济南 VS. 合肥 综合调研报告</span>
+            <span class="post-date" title="2019-11-20 15:13:47">2019/11/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/11/06/【OpenCV系列】通过OpenCV读取并显示YUV视频文件/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="通过OpenCV读取并显示YUV视频文件">通过OpenCV读取并显示YUV视频文件</span>
+            <span class="post-date" title="2019-11-06 10:45:47">2019/11/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2019/10/20/【Codecs系列】AMBA CV22芯片知识总结系列/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="AMBA CV22芯片知识总结系列">AMBA CV22芯片知识总结系列</span>
+            <span class="post-date" title="2019-10-20 15:13:47">2019/10/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/10/20/【CV系列】图像去雾技术研究/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像去雾技术研究">图像去雾技术研究</span>
+            <span class="post-date" title="2019-10-20 10:45:47">2019/10/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/10/19/【Codecs系列】颜色空间转换CSConvert：YUV420P转MonoY/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420P转MonoY">颜色空间转换CSConvert：YUV420P转MonoY</span>
+            <span class="post-date" title="2019-10-19 22:13:47">2019/10/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/09/15/【Think系列】关于变化与成长的小思考/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="关于变化与成长的小思考">关于变化与成长的小思考</span>
+            <span class="post-date" title="2019-09-15 22:00:47">2019/09/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/15/【Linux系列】select()函数的用法及实例/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="select()函数的用法及实例">select()函数的用法及实例</span>
+            <span class="post-date" title="2019-09-15 15:13:47">2019/09/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/14/【Linux系列】Linux设备驱动之Ioctl控制/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux设备驱动之Ioctl控制">Linux设备驱动之Ioctl控制</span>
+            <span class="post-date" title="2019-09-14 15:13:47">2019/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2019/09/13/【ARM系列】ARM架构中断异常处理机制/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构中断异常处理机制">ARM架构中断异常处理机制</span>
+            <span class="post-date" title="2019-09-13 10:45:47">2019/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/09/07/【PE系列】命令行参数解析的两种方法/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="命令行参数解析的两种方法">命令行参数解析的两种方法</span>
+            <span class="post-date" title="2019-09-07 15:13:47">2019/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/09/01/【Codecs系列】颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)">颜色空间转换CSConvert：YUV422P转YUV422SP(NV16)</span>
+            <span class="post-date" title="2019-09-01 21:45:47">2019/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 多线程编程 "
+           href="/2019/08/25/【Tools系列】多线程中如何进行参数传递？/"
+           data-tag="Tools"
+           data-author="" >
+            <span class="post-title" title="多线程中如何进行参数传递？">多线程中如何进行参数传递？</span>
+            <span class="post-date" title="2019-08-25 15:13:47">2019/08/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/08/11/【CV系列】在同一窗口显示多幅图片/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="OpenCV中在同一窗口显示多幅图片">OpenCV中在同一窗口显示多幅图片</span>
+            <span class="post-date" title="2019-08-11 10:45:47">2019/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/08/10/【Think系列】技术发展之路——专业能力/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="技术发展之路---专业能力">技术发展之路---专业能力</span>
+            <span class="post-date" title="2019-08-10 15:13:47">2019/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 音乐 "
+           href="/2019/08/08/【音乐系列】吉他学习入门基本知识/"
+           data-tag="吉他"
+           data-author="" >
+            <span class="post-title" title="吉他学习入门基本知识">吉他学习入门基本知识</span>
+            <span class="post-date" title="2019-08-08 10:45:47">2019/08/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 开源项目 "
+           href="/2019/08/04/【开源项目】Python+Qt实现简单的视频监控界面/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python+Qt实现简单的视频监控界面">Python+Qt实现简单的视频监控界面</span>
+            <span class="post-date" title="2019-08-04 15:13:47">2019/08/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2019/07/27/【Tools系列】Conda安装和使用方法/"
+           data-tag="Conda"
+           data-author="" >
+            <span class="post-title" title="Conda安装和使用方法">Conda安装和使用方法</span>
+            <span class="post-date" title="2019-07-27 10:45:47">2019/07/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2019/07/14/【Tools系列】Git使用方法/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git使用方法">Git使用方法</span>
+            <span class="post-date" title="2019-07-14 10:45:47">2019/07/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：YUV420转YUV444/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420转YUV444">颜色空间转换CSConvert：YUV420转YUV444</span>
+            <span class="post-date" title="2019-07-13 21:45:47">2019/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV">颜色空间转换CSConvert：NV12toYVYU或NV12toYUYV</span>
+            <span class="post-date" title="2019-07-13 21:40:47">2019/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21/"
+           data-tag="Codecs,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21">颜色空间转换CSconvert：NV21转BGR24和BGR24转NV21</span>
+            <span class="post-date" title="2019-07-13 21:40:47">2019/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换">颜色空间转换CSConvert：NV12、NV21、YV12和I420的相互转换</span>
+            <span class="post-date" title="2019-07-13 21:34:47">2019/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/13/【Codecs系列】颜色空间转换CSConvert：YUV420P(I420)转NV12/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：YUV420P(I420)转NV12">颜色空间转换CSConvert：YUV420P(I420)转NV12</span>
+            <span class="post-date" title="2019-07-13 21:23:47">2019/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/12/【Codecs系列】颜色空间转换CSConvert：RGB24转YUV420P/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSConvert：RGB24转YUV420">颜色空间转换CSConvert：RGB24转YUV420</span>
+            <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2019/07/12/【Codecs系列】关于颜色空间转换的一个思考/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="关于颜色空间转换的一个思考">关于颜色空间转换的一个思考</span>
+            <span class="post-date" title="2019-07-12 22:13:47">2019/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 书单 "
+           href="/2019/07/11/【Books系列】2019年阅读书单/"
+           data-tag="Books,ReadingList"
+           data-author="" >
+            <span class="post-title" title="2019年阅读书单">2019年阅读书单</span>
+            <span class="post-date" title="2019-07-11 22:13:47">2019/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/07/08/【CV系列】图像直方图均衡化原理和算法实现/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像直方图均衡化原理和算法实现">图像直方图均衡化原理和算法实现</span>
+            <span class="post-date" title="2019-07-08 10:45:47">2019/07/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/06/29/【Books系列】2019年第三本书：《新物种爆炸》读书笔记/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="《新物种爆炸》读书笔记">《新物种爆炸》读书笔记</span>
+            <span class="post-date" title="2019-06-29 15:13:47">2019/06/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/06/22/【Books系列】2019年第二本书：大冰《我不》读书笔记和读后感/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="大冰《我不》读书笔记和读后感">大冰《我不》读书笔记和读后感</span>
+            <span class="post-date" title="2019-06-22 15:13:47">2019/06/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2019/06/02/【Think系列】工作两年的总结和思考20190602/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业两年的总结和思考20190602">毕业两年的总结和思考20190602</span>
+            <span class="post-date" title="2019-06-02 15:13:47">2019/06/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/05/29/【CV系列】图像去噪算法研究（去噪+锐化）/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像去噪算法研究（去噪+锐化）">图像去噪算法研究（去噪+锐化）</span>
+            <span class="post-date" title="2019-05-29 22:13:47">2019/05/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/05/22/【CV系列】图像低照度增强算法研究/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="图像低照度增强算法研究">图像低照度增强算法研究</span>
+            <span class="post-date" title="2019-05-22 10:45:47">2019/05/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2019/05/13/【C系列】C工程中灵活的参数解析方式/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C工程中灵活的参数解析方式">C工程中灵活的参数解析方式</span>
+            <span class="post-date" title="2019-05-13 15:13:47">2019/05/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 图像处理 "
+           href="/2019/04/03/【CV系列】数字图像滤波去噪算法总结/"
+           data-tag="CV"
+           data-author="" >
+            <span class="post-title" title="数字图像滤波去噪算法总结">数字图像滤波去噪算法总结</span>
+            <span class="post-date" title="2019-04-03 10:45:47">2019/04/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2019/03/18/【Tools系列】不同系统文件共享(挂载)方法/"
+           data-tag="mount"
+           data-author="" >
+            <span class="post-title" title="不同系统文件共享(挂载)方法">不同系统文件共享(挂载)方法</span>
+            <span class="post-date" title="2019-03-18 10:45:47">2019/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2019/03/05/【PE系列】之跨平台统一时间函数SDK及用法/"
+           data-tag="sample"
+           data-author="" >
+            <span class="post-title" title="跨平台统一时间函数SDK及用法">跨平台统一时间函数SDK及用法</span>
+            <span class="post-date" title="2019-03-05 21:45:47">2019/03/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 随笔 "
+           href="/2019/02/10/【Life系列】我奋斗了18年才和你坐在一起喝咖啡/"
+           data-tag="Life"
+           data-author="" >
+            <span class="post-title" title="我奋斗了18年才和你坐在一起喝咖啡">我奋斗了18年才和你坐在一起喝咖啡</span>
+            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 读书笔记 "
+           href="/2019/02/10/【Books系列】2019年第一本书：大冰《好吗好的》读书笔记和读后感/"
+           data-tag="Books"
+           data-author="" >
+            <span class="post-title" title="大冰《好吗好的》读书笔记和读后感">大冰《好吗好的》读书笔记和读后感</span>
+            <span class="post-date" title="2019-02-10 15:13:47">2019/02/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2019/01/02/【HISI系列】之SDK编码器开发框架与海思媒体处理平台架构/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="SDK编码器开发框架与海思媒体处理平台架构">SDK编码器开发框架与海思媒体处理平台架构</span>
+            <span class="post-date" title="2019-01-02 15:13:47">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/12/25/【Python系列】Python程序变成可执行程序的方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python程序变成可执行程序的方法">Python程序变成可执行程序的方法</span>
+            <span class="post-date" title="2018-12-25 15:13:47">2018/12/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/12/21/【编译工具】MinGW的使用方法和编译/"
+           data-tag="MinGW"
+           data-author="" >
+            <span class="post-title" title="MinGW的使用方法和编译">MinGW的使用方法和编译</span>
+            <span class="post-date" title="2018-12-21 10:45:47">2018/12/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/12/21/【编译工具】Cygwin的使用方法和编译/"
+           data-tag="cygwin"
+           data-author="" >
+            <span class="post-title" title="Cygwin的使用方法和编译">Cygwin的使用方法和编译</span>
+            <span class="post-date" title="2018-12-21 10:45:47">2018/12/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/12/10/【PE系列】搭建支持C99源代码编译的vs2010工程的方法/"
+           data-tag="C,makefile"
+           data-author="" >
+            <span class="post-title" title="搭建支持C99源代码编译的vs2010工程的方法(附MinGW下Windows GNU makefile的编写)">搭建支持C99源代码编译的vs2010工程的方法(附MinGW下Windows GNU makefile的编写)</span>
+            <span class="post-date" title="2018-12-10 15:13:47">2018/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 Linux工具 "
+           href="/2018/12/08/【Tools系列】vim编辑器快捷键使用方法/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="vim编辑器快捷键使用方法">vim编辑器快捷键使用方法</span>
+            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2018/12/08/【Tools系列】hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2018-12-08 15:13:47">2018/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2018/11/29/【Tools系列】Linux平台静-动态库中强符号修改工具/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="Linux平台静-动态库中强符号修改工具">Linux平台静-动态库中强符号修改工具</span>
+            <span class="post-date" title="2018-11-29 15:13:47">2018/11/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/20/【PE系列】Visual Studio自定义生成工具配置方法和相关vs系统变量含义/"
+           data-tag="VS"
+           data-author="" >
+            <span class="post-title" title="VS自定义生成工具配置方法和相关VS系统变量含义">VS自定义生成工具配置方法和相关VS系统变量含义</span>
+            <span class="post-date" title="2018-11-20 21:45:47">2018/11/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/11/14/【ARM系列】ARM交叉编译工具链和编译浮点选项使用说明/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM交叉编译工具链和编译浮点选项使用说明">ARM交叉编译工具链和编译浮点选项使用说明</span>
+            <span class="post-date" title="2018-11-14 10:45:47">2018/11/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台编译makefile编写规则/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台编译makefile编写规则">Android平台编译makefile编写规则</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台通用编译环境/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台通用编译环境">Android平台通用编译环境</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/11/13/【android】Android平台通用编译模板/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android平台通用编译模板">Android平台通用编译模板</span>
+            <span class="post-date" title="2018-11-13 15:13:47">2018/11/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/11/11/【Codecs系列】FFmpeg中mpeg2编解码器的提取和编译测试/"
+           data-tag="Codecs,FFMPEG"
+           data-author="" >
+            <span class="post-title" title="FFmpeg开源代码提取方法（附mpeg2编解码器提取）">FFmpeg开源代码提取方法（附mpeg2编解码器提取）</span>
+            <span class="post-date" title="2018-11-11 21:13:47">2018/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2018/11/11/【Think系列】对于现在工作的思考20181111/"
+           data-tag="Think,Plan"
+           data-author="" >
+            <span class="post-title" title="对于现在工作的思考--20181111">对于现在工作的思考--20181111</span>
+            <span class="post-date" title="2018-11-11 15:13:47">2018/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/11/03/【Codecs系列】视频编解码标准梳理框架和要点分析/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="视频编解码标准梳理框架和要点分析">视频编解码标准梳理框架和要点分析</span>
+            <span class="post-date" title="2018-11-03 15:13:47">2018/11/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/10/24/【Codecs系列】MPEG-2标准总结文档/"
+           data-tag="Codecs,MPEG2"
+           data-author="" >
+            <span class="post-title" title="MPEG-2标准总结文档">MPEG-2标准总结文档</span>
+            <span class="post-date" title="2018-10-24 15:13:47">2018/10/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/27/【ios】xcode工程建立和配置（ios真机测试方法）/"
+           data-tag="ios"
+           data-author="" >
+            <span class="post-title" title="xcode工程建立和配置（ios真机测试方法）">xcode工程建立和配置（ios真机测试方法）</span>
+            <span class="post-date" title="2018-09-27 21:45:47">2018/09/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/26/【PE系列】mac和ios通用编译环境/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="mac和ios通用编译环境">mac和ios通用编译环境</span>
+            <span class="post-date" title="2018-09-26 21:45:47">2018/09/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/09/20/【Codecs系列】FFMPEG 命令行常用方法示例（含yuv处理命令）/"
+           data-tag="Codecs,FFMPEG"
+           data-author="" >
+            <span class="post-title" title="FFMPEG 命令行常用方法示例（含yuv处理命令）">FFMPEG 命令行常用方法示例（含yuv处理命令）</span>
+            <span class="post-date" title="2018-09-20 21:13:47">2018/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/09/10/【PE系列】makefile工程编译模板/"
+           data-tag="makefile"
+           data-author="" >
+            <span class="post-title" title="makefile工程编译模板">makefile工程编译模板</span>
+            <span class="post-date" title="2018-09-10 21:45:47">2018/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 自动化脚本 "
+           href="/2018/09/07/【Codecs系列】编解码器性能测试自动化脚本/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="编解码器一致性验证和性能测试自动化脚本">编解码器一致性验证和性能测试自动化脚本</span>
+            <span class="post-date" title="2018-09-07 15:13:47">2018/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2018/09/04/【Tools系列】Performance Profile Tools——perf and gprof/"
+           data-tag="gprof"
+           data-author="" >
+            <span class="post-title" title="Performance Profile Tools——perf and gprof">Performance Profile Tools——perf and gprof</span>
+            <span class="post-date" title="2018-09-04 10:45:47">2018/09/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2018/08/31/【Tools系列】GDB调试方法/"
+           data-tag="GDB"
+           data-author="" >
+            <span class="post-title" title="GDB调试方法">GDB调试方法</span>
+            <span class="post-date" title="2018-08-31 10:45:47">2018/08/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2018/08/25/【PE系列】CPU进程绑定技术（指定当前运行的CPU核）/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="CPU进程绑定技术（指定当前运行的CPU核）">CPU进程绑定技术（指定当前运行的CPU核）</span>
+            <span class="post-date" title="2018-08-25 15:13:47">2018/08/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构32位汇编优化总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构32位汇编优化总结">ARM架构32位汇编优化总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】Some ways of Migrating code from ARM32 to AArch64/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="Some ways of Migrating code from ARM32 to AArch64">Some ways of Migrating code from ARM32 to AArch64</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册">ARM架构64位入门基础：架构分析、寄存器、调用规则、指令集、程序调试以及参考手册</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm架构64位（AArch64）汇编优化总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM架构64位(AArch64)汇编优化总结">ARM架构64位(AArch64)汇编优化总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】Thumb状态分析以及ARM与Thumb之间的状态转换/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM与Thumb之间的状态转换">ARM与Thumb之间的状态转换</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【ARM系列】ARM汇编优化常见问题汇总/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="ARM汇编优化常见问题汇总">ARM汇编优化常见问题汇总</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/08/18/【arm】arm32位和arm64位架构、寄存器和指令差异分析总结/"
+           data-tag="ARM"
+           data-author="" >
+            <span class="post-title" title="arm32位和arm64位架构、寄存器和指令差异分析总结">arm32位和arm64位架构、寄存器和指令差异分析总结</span>
+            <span class="post-date" title="2018-08-18 15:13:47">2018/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活 规划 "
+           href="/2018/08/05/【Think系列】毕业一年的总结和思考20180805/"
+           data-tag="Think"
+           data-author="" >
+            <span class="post-title" title="毕业一年的总结和思考20180805">毕业一年的总结和思考20180805</span>
+            <span class="post-date" title="2018-08-05 15:13:47">2018/08/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2018/07/28/【Tools系列】使用xstart远程连接linux图形用户界面/"
+           data-tag="linux,Tools"
+           data-author="" >
+            <span class="post-title" title="使用xstart远程连接linux图形用户界面以及rxvt终端配置">使用xstart远程连接linux图形用户界面以及rxvt终端配置</span>
+            <span class="post-date" title="2018-07-28 15:13:47">2018/07/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/07/12/【Codecs系列】颜色空间转换CSconvert：YUV420PtoRGB24/"
+           data-tag="Video,CSConvert"
+           data-author="" >
+            <span class="post-title" title="颜色空间转换CSconvert：YUV420PtoRGB24">颜色空间转换CSconvert：YUV420PtoRGB24</span>
+            <span class="post-date" title="2018-07-12 22:13:47">2018/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2018/06/22/【Tools系列】GnuWin32使用以及windows下gnu makefile编写/"
+           data-tag="makefile,Tools,Gnu"
+           data-author="" >
+            <span class="post-title" title="GnuWin32使用以及windows下gnu makefile编写">GnuWin32使用以及windows下gnu makefile编写</span>
+            <span class="post-date" title="2018-06-22 15:13:47">2018/06/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/06/04/【Codecs系列】YUV处理工具：图像水平拼接/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：图像水平拼接">YUV处理工具：图像水平拼接</span>
+            <span class="post-date" title="2018-06-04 15:13:47">2018/06/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/29/【Codecs系列】YUV处理工具：文件剪切功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件剪切">YUV处理工具：文件剪切</span>
+            <span class="post-date" title="2018-05-29 15:13:47">2018/05/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/28/【Codecs系列】YUV处理工具：文件分割和帧率扩倍功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件分割和帧率扩倍功能">YUV处理工具：文件分割和帧率扩倍功能</span>
+            <span class="post-date" title="2018-05-28 21:13:47">2018/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编解码 "
+           href="/2018/05/28/【Codecs系列】视频编码中的块效应、振铃效应和呼吸效应分析/"
+           data-tag="Codecs"
+           data-author="" >
+            <span class="post-title" title="视频编码中的块效应、振铃效应和呼吸效应分析">视频编码中的块效应、振铃效应和呼吸效应分析</span>
+            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/28/【Codecs系列】YUV处理工具：文件拼接功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件拼接">YUV处理工具：文件拼接</span>
+            <span class="post-date" title="2018-05-28 15:13:47">2018/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 视频处理 "
+           href="/2018/05/21/【Codecs系列】YUV处理工具：文件比较功能/"
+           data-tag="YUV"
+           data-author="" >
+            <span class="post-title" title="YUV处理工具：文件比较功能">YUV处理工具：文件比较功能</span>
+            <span class="post-date" title="2018-05-21 21:13:47">2018/05/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/14/【C系列】两种结构体成员初始化方式：顺序和乱序/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中两种结构体成员初始化方式：顺序和乱序">C语言中两种结构体成员初始化方式：顺序和乱序</span>
+            <span class="post-date" title="2018-05-14 15:13:47">2018/05/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/08/【Python系列】Python中获取当前目录和子目录下所有文件或指定文件的方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python中获取当前目录和子目录下所有文件或指定文件的方法">Python中获取当前目录和子目录下所有文件或指定文件的方法</span>
+            <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 编程语言 "
+           href="/2018/05/08/【Python系列】Python中执行可执行文件的四种方法/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python中执行可执行文件的四种方法">Python中执行可执行文件的四种方法</span>
+            <span class="post-date" title="2018-05-08 15:13:47">2018/05/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 优化 "
+           href="/2018/02/18/【优化系列】之DSP优化方法/"
+           data-tag="DSP"
+           data-author="" >
+            <span class="post-title" title="DSP通用优化方法">DSP通用优化方法</span>
+            <span class="post-date" title="2018-02-18 15:13:47">2018/02/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/10/15/【Tools系列】Valgrind工具检测内存错误实例分析/"
+           data-tag="valgrind"
+           data-author="" >
+            <span class="post-title" title="Valgrind工具检测内存错误实例分析">Valgrind工具检测内存错误实例分析</span>
+            <span class="post-date" title="2017-10-15 21:45:47">2017/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/10/09/【Tools系列】Windows平台下内存泄露分析工具：WinDbg/"
+           data-tag="windbg"
+           data-author="" >
+            <span class="post-title" title="Windows平台下内存泄露分析工具：WinDbg">Windows平台下内存泄露分析工具：WinDbg</span>
+            <span class="post-date" title="2017-10-09 10:45:47">2017/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2017/09/25/【PE系列】通过批处理脚本命令行编译VS工程/"
+           data-tag="批处理"
+           data-author="" >
+            <span class="post-title" title="通过批处理脚本命令行编译VS工程">通过批处理脚本命令行编译VS工程</span>
+            <span class="post-date" title="2017-09-25 15:13:47">2017/09/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 调试工具 "
+           href="/2017/09/24/【PE系列】查看dll导出的符号的方法以及Depends.exe反汇编工具介绍/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="查看dll导出的符号的方法以及Depends.exe反汇编工具介绍">查看dll导出的符号的方法以及Depends.exe反汇编工具介绍</span>
+            <span class="post-date" title="2017-09-24 15:13:47">2017/09/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 技术 工程化 "
+           href="/2017/09/22/【PE系列】Windows平台下为可执行文件或动态库dll添加版本信息和图标/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="Windows平台下为可执行文件或动态库dll添加版本信息和图标">Windows平台下为可执行文件或动态库dll添加版本信息和图标</span>
+            <span class="post-date" title="2017-09-22 15:13:47">2017/09/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 Linux工具 "
+           href="/2017/09/17/【Tools系列】通过SecureCRT远程登录telnet连接虚拟机的linux系统/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="通过SecureCRT远程登录telnet连接虚拟机的linux系统（CentOS/Ubuntu）">通过SecureCRT远程登录telnet连接虚拟机的linux系统（CentOS/Ubuntu）</span>
+            <span class="post-date" title="2017-09-17 15:13:47">2017/09/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 编译工具 "
+           href="/2017/08/14/【编译工具】Android NDK Build 用法/"
+           data-tag="Android"
+           data-author="" >
+            <span class="post-title" title="Android NDK Build 用法">Android NDK Build 用法</span>
+            <span class="post-date" title="2017-08-14 10:45:47">2017/08/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-【Think系列】工作五年的总结和思考20220718" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">毕业五年的总结和思考20220718</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="生活">生活</a> > 
+            
+            <a  data-rel="生活&lt;---&gt;规划">规划</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Think</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-07-19 20:56:39'>2022-07-18 15:13</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:10</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="99b6495d4b113f5b9f3dd64e8cf6056f52c3c708e70df38d301b45feb6b3fcd0">99e90ed8facc018dc01924e036f6c778621c7460d1624df7643a5ee90561275d5b4e842b5c4e27434641436b7e4f5c2f8f3689fa1451e0e836ed518954dd0f634250305e605747913e390633e0b2f2e76b73396f69ce706064bce8ed31e6fab1efc22f46a87e744890a0b9df2143a278f63873d7d8c971ffcf9e4807f07d59806970356c51ce26d963d9e3c16b3f56a585ebdc94044b7603e5f23e4de2d5ff6a6cc45d4dc9570a375eb1ab2fb9024c56bbede1acae3663823e27be17dfe24e7e375d8a5609e90dea19af2a4b4157c233c05fc4d08127d989788f178b3d12ac0bcebab5efa221282c857a303cb05087529cfe722bfedd542f5c9260215d23274ce3fe69ab6bce1ad0c74682e9dac23a23758809ed4b23dd722db7ab8b9fd583a5437e237ed09a64a30ae165f99278892196c37fb63fd625b6d77a5de40e693c9f8ef68506e1d70e9ee6e16656e35368d8423e84afb4059e8ad567738c6a292e2e31736b93d8fa4f74def53fdf7308b31b472a0add5398a66f060c82f5e1cf02b0cd256b04dc4316fb8d16eb60703de6a3ff005190d01a9ae1bfddce83f8fcb80b7b420d0e54bac35f4e894d522f6548b964e9da37c75108e78a6bd4c8d3d8b9eaefc403039ba14f23c070102330245c6e114dac18e4296a39faae705908e4281adca61dedaa2c17055caeb5ef5b76e7c2c4d872cd818400f61c990334c98caa6cc322a940e8de0d9444df30eba686aa335397e3da936b7e0373577ac234d491095622536c871103fa67ed9d05c815c878e6fe621fd3712291e470bcbedbf3821dd338ef9aaaa8f991d91cd462a2c72fa43590a6344f9f95a31e7c3e2ded7524b6096f75ccca29e08a20fc7f5184bf92b280bbd53d8cdabe1b293b41bf432c25950cedea692c39aa1b423ab876c2d5615a09385ce4c5193ff6b50ef9fceb6bc75df0a4be76fc607e89c96054d122ac65666bda16c8a7b8016a0c9f93f444e0d83a5499485d3eb2843c5e1bd8377bb8e9ffff5b42aa75e54551d695cac00a8631ff1e43a2310aa2156eeca5bb61f56e35daff3c64a19037cb39fc53243b1a623e0a825fd1de447b73787a6ce175d496bfcf384229a0b287061fa4d56144e61d8450b39cbb0e96a4deebea4fda93553d6cdce83265ce5b11e7bfed5e7820449798783e3a16cdcdddcdb01ac74db1178895c7fdb94910081ca252f712b6a35ee440684a635f62df8369c7ae9a0869011926739f04bd7d0a4dd59c67c962f7c1d34248a6e099c5317bf288ffb8009fe1913223c29a1ff0e9a9248bcc425349f7ffa5257eac2feaa33ee75eb5d8378991893812522b7a9576f393a6631eadef21f58a3e5d8c6338bb6b4d05b83267d1f95f60c8d9fe0d8e56ee9e91ca9b6ac83a73a8718dcb936e918a34fbdfe25305512c0e310946770fb69736073fde8d12b38d6311c6bb861efe0b6b61a736c44a090b76ec4697e6e368ca2b2b640939805b26e06aef4217539b539262863ccf10c81f507df3676e8967c388e3c11f66b550ae76689baee57bc13e95416bcdf58d08dd19b33fb2eddfd709991a753df975b55826ac095394d49101f788df4d59d78f566ad5b61b960df98efb64f595ad898adf2afeaa57783040025f592adb24b18f0df057537df26e6b5effd7d6479eaf6c6aafb55fdac52d3a69c3191c4f29a29663cc1def9bf1d6802d03afd54dba1c1b2ed2f606ff95ad5911608313ff8356047a30636ee55d5304c457d5dc3c5839b11cae34761a743b56932ce9f050714855fb9bcae8cf7bce3b8c47466650902114729863415a0f3fa7e474434d4bb562b70edd309aa99fa02cf112392e99bf7ca0573c81e13364505239ae8d8d13846607642ee8b3a360f40b5acdad0f22696cfb57095d3cf6ca67a7c981202c0e8f129536ebf2161fa4013578a5e4f49f663f5edb24350712ca8a1c9571ab190b7d6005844ae28aa22c5fc4f2560f9f36bf675edf0d062fcfdcb9efcb3fc1ee6751a2d8fecfc77787f26f5099424554fddb3c7e7841faa685fcfe6d257da4bf71787964e3a091de5cb82ad03e6320d3c189b65b06491a59be10229876add020f0d31234d0b33938e7646a6a9f27c0f221e96b4513c288f22124fc4a1a379c334a76b2e10dff34248ecf1dca35015e603ff6e1720414e25e6b131c238aeb57dfe8439025c16291aa1101a7d45653618b2757a8b92728d9a3ce82742ef7e0ecc37ad4dc9da1d7bf193886c4a8147982e5aeb2fae03a9782bc57c741899534c2160c60434bb03cf27df328e2213dd123b71979aef7b5d9afc8a696799fc8b713e6dbb7704d9d9194414444a5cec98f2c08905865d1224aec46f7730ac7837e784f6c052bc66f5028831149fe0ee366091b8917b1d0bc889ae1eec132ef438eabd8fba80b1bb7c6c21f62046437d112b81bb53d3331fb1685451d3cd86e961a49a18d44e717b6472a09166b53346b95c4ceb0026ae92476a46745fc31d69116fd8f4fc69d1b9c55535703af341aeeee4fa7dd02795b914c661eb2f316aaf0f00ca35f8f58514b0ae2e92977fb67b51adbfd8bd3d8cbad6efd2fc0b99f4a88ea0e47909a260093400b1b8e75751dbe727ce24be99209ea7906e8195939c0b523b1e67fa904ea9ae4bba425e6de38c4feb34c98ead9f1304d0e711349976ebe6a6a4bd48696bf295c2a1a8b27c3dcaae1374a28f94779e349db432f8158afd7fadab3bf17b7e01c048d283fd40a2970504ca9d13a01dc85ad5aed4d1b5c5faaa9857af263939f9b46251addb8be3cf947ae652fc0b03135705c6095a9d78768de2ecd779199247d0de8077c005dbdd9f1d0c52a81ffad5ff7e0b32018ffd2a79caf811813916d8577e4c73f7358092ee2f0e3608ed096ebb729d27683a6f9f9ab074b22e16bb52aad2d1bf5a70914bdce6c3e6abe2171850c541a22731cee1021ecbaaaa2a3968d2ad26333433f18533ab4c36ae9f23a870c2d469327ba903350e401b5160c0556e47dd418bd409993e6bc6335b0c3683f1489e39a596069ef705a24af3d1081f4409bdb0bddb0de8acde37937797f00b2df0296e6ef7175d7088779a63421f9dd40c3bfbc478a9c532df84edc55240084e0fbcc571d24d1d15c1f6b7077f7f16940a9bf052ac1c71d2e74c55dba7b6c9a18604431c455b23f574d53d4e8d0ccae22032f4eb38ab14629f3fdfaec3aaae32616218edd96cda139353c7f3f68ca7b5715311dda18cc1de3df1d20dcc3b07fdcceac11f50f3fefec980b47ee2ac584012954579eb74d2c9fd6fd2ac2811295266858f666aa97258597724c3a656d5c483ef0e4e355b4059bbe0304f14aa92925cc6ef8828803901d613cc09e11fe2eb2adc6f182a38c73dd7f7dea758205e385bfb2849517c2703c9777c93d62ef0d6b305d7a8d2d35ecc900457077962e4aeffa6786f9af7c6a5c0427a894ff01b7b1fee2aa51cd2e851d690f9ee69adfcad42ad4906483a0c9d3650b79ae70989153e65b21f6fd4d732ee30a4da713b8ea61330296114a4eec85ec28eab300b8729c00fdec54b604bcfc88db67418d153886bf12cef44c6435150188248d34cabff32ba8567e9ef1da484187c68520db11d07b9e325bff06c89cfd0851db186ed04db0c60de13681c922b333f634df5d7b9c846bc2f40284d610d729ae7ba3f16e7ee32f188ee80e97833a6a1d5215a06b1288583d3b98cd3521f0c73dfcaa81013dc0345e06333a2b5be7f2bc55bf5a8cb9683ff70647c67d99484bd27f210712cb91d0eda6569219afedf5a368a3cbbac5f707d73a115a5bb74568462f732e92522209db4d773981503fb85cd4d65445d986b187dacd38a219122e3ba7651e28f7d3fb20168af15635ca0508b7d6da94c6eaca9fc9f50002a460ec661d08ac9565756784792658aa9940d92c4c8c4ced2f6e0e1e514a166c2829d968e5cfa5be4326db2d4a56e402b054cd75eb285881ff27079e37a36b2e744092a1e4c1b5edcddcfa4fe87b1bb3fd6861d7ad66352a9f3a7162605b89d1c67f5caf47bd9092cf5dd283313ac8898e136cffb9c895535a93e8a0ec102e1e9b3c96d9047096f9e0ae3337f01c053a526b692c565dba20b423e10cbac134d0e6fbe460f95da6114a02f6c5fe32cb375561f428ecc08c8f3e232a9fcbee6bb897e893b9138d6dadc09d754d4a0e0386baff8eacf222719a8f98f490c90820c6e4ed6898e55f4e7526bbb0d4154dea1e7d04eb3c74cbebb321293c1782763af917a7c80cdaf702ab03b4eefd847eabf6faef4cc2d80b413debb687e949086aa1d461f96499937a55d722404527b33d97a84bffe792df2bc6f5f60514a61092fb98d5f647bb5a1a6d1d6cf617712c68d476e3ed7e61b4199d6a40bc8ac5be4cb0b3b3673f6458a8a8ca05454fdf033e7a7cff835b6e85d43e24948cce3a02742903fc58c00b828cab9766380be9578b225bf8763a16330967b3a888f9399fd27f7696b9307be486628fc6c38df148e4aa395c303eadc7b0c9c5442d9dcf5816843ec4a76a22e5ad44fa50dd3eec61edd4021ce19e016e4899d9092b46e77ad0131cd00085ab6fb2c9687c4d52354faaeb0477cf4d6de54336729c62f53db63a3519ccbed4d2457621c36110bec26bbfa95f4e3b29dac4d870053fc963d80714c3a18d881ad3710c74c58ec1bee96932c21ba85f219fdefbe6d328926ec3606ca06dc0f0048bd36ad695d3c9102c481535729cbe2d7d15417dc96116955e639d88cbc23419f847a13af7998b449c49024047a1afd57281b8b254ca3347f3822eaacc8fd8fe8cab051617f770cf4340b8d38ca60ca883a276ebea49b376a4b837201c1ae438e8aacf5209d2cb7dd4b8fb8893e7a30750e39458a63dc7c4b2078d807136b47d6a036f1cb4e383371fefdfbf7a8382d63fde46392188cfe186fba795143b7b4b7e26d1b827f0bec240331d6494f657cfc602f5d50250f9564b1d646087012002801ba5b8c937e6c99aee5f9906326e9b4ea6523af61c39904a6ff718f80496247be32055303ef3c632fa87b207340a51734d63b6cc02be3ba64fc7cdd8b110e801850935e8d7d7f6c5c4d31b0f122121fb9a7f612f2e26d69687e2880ef8012be56062e009fae28b74bb324d815d97aebfd5855eda6a77dc457737634c3ce4e96c51debe3ebe958395daf9342264ee55f818dabbdb5329ce5f58726a155b3f2de2ac034381153eb7186384342be5193cb68cc6ac3981b9df50310b05a8e8eb04da9536fee4858dddb1fa4730ad44c72f7d894f90ec6af3a884c0b54df8d52843833d44faa28e2b40f8c2eefb762d271f69a95516f4d8f0ec5c29607638862d5566ce6a9d89dd6e07cc347aa989071a3751d2b3e25c6d265270a07a8d06e888f0b09ae2fd2193b487ade1139b2d5bb123203d668d3cf7b7149d4f130eb4ef6cd1284320622ca1fdcebf93fde38dae274652bd0751c87a6e8a27ecf17e98fbe5a88a41936ba7c443d824e6dd0c191f49ff68081ffac8eb12d38998f6288547821ebd813a18338a1591f8acc39b3663f535b5c302ed89e21f75a1245975e2d0154b57c32b226d10f069f60097a37edc09bc15b06c0b568d2d5a700bba842184933aa62037bcb4134e0bd1a426b5c33a965d68ee4fc21bd2ad3e9e2ee15360c362cdecff1de2d3f7f30d74262f0150b004963ec5fa40e6e5b7e7ac6a6eeb264be15b5f5613e9352e1ac0d4622cd2d9411ed4fb5cbd9f9c3a8fa7e90157fa07415cd75183d532cd4aaa565446ba22067b19be0c60181319f1841af94c4a4fb96d8dc86e1a503285a24fe4408cc248275cb434545a75c448712ccd333428657c45f8756169c095f564baa0683459eacec4be583313b1882218139836a03f49a55bab1156798f7298f2ad356e33bef46ca7325355833f43346324b5f85ed10af991eeedee4e5de68aae935c685c3fa5475caf3d3d9033ee0491a641f97a529176f42156b866910c7eb96d15ff6b1a50dfc109c8670e8bd25d97813cd41d427c3dfa094942e32e41ae68498a8de9f4315d97e21ca66a3c6ab26f683b136ff0fddb5d1cf62df5e792119d76ad7074e8d11bc202a3377b790330c8ac91ba3136ccc0f3552b4cee555c760271fec7fc4914bcc3aa458a47018cb74e7fc4f19f8343d73fc7ca71f28eb07309af9a05512c8250ae1aeb9ce1ece75bc849876dfb8c53bbe85834b7e19aa7b47f72c01d63c7f8c393fa57dea3d95551dd603602e7f3ba253d3e8b8808463121245ecbdace82de3a60b5179f44eb0e3f3c7df755e0ab009147ab5f31163bdf23d38eef6dec2bbece2677909b73fa74b49d942e401d87d2d9b4de0f6f3ef17180fbe3334916bd14af306204383b26214d1f1dc4add6c16bf4632d14c28820f233582be547a9f997f69e389b799e25ae4296e48372c1714080a28f189643e4b1763c3f0938221bf920d3972d067b1d843a3c9c6d0976f9487802d3eba4d0967a396d163f8bb7886c436302c1c83ea15173b5233273ffe5255ef42d66ab02464abf76319007e39c73ddc2b95e6fe4dee7a01bc2f59451991140650009f1293949944d1064395cd9b8ea88d12ee86811f3924b8fe7eddde286c139705d0826cf1db2358df21bc6d404b9c852c2a2a991350e89d2eada18f8038342db1d8e7d03f44f98cefeda002d0eb2005a1dd97514fcccbacb9242de006efae45e845bedf439ded04073a1547a76985097d04041b5d2a0298ae8997f1cd117d736efe7f13be66ea4b59494aac787c03f38839e775976c62d8fcac8da7e052aebb078734a31478a6199ae2bcb0a502c81feed0400a38e08126939f2992e849f4a523ecea8bde6cdba096394dde177da2ce68bc2972217af5d501aca5e950b2c6f56032a5b6044b76b81e867b3d004dfadae1a3da014db045f78db412466f563828332f73302e2fa67e2eaa34698b1e32c3eeae3f78467b002caabef6abe749c240369c1a0c6ebbae672b16e8a1b736d044563190e18e833e25431ebb945aed47601ccc0314f4a61210c4dcdb2de75d19bad134edc9eede3a2a980f80ac56031c158ad08e1b4f86b95cd5713ed03d874868726eea3c3385c1f6a5406c0c37dc9c65181d17a4cbaf4b33c0593b542d0b7d49daf45143741b4734448332717d380135154ec3a33f072f0564456f88bd546d3249bd09a38702e10e1a349567d9888c9e3f078a3e137e872419ce3a0e7e3fc6f49e5567f58f03eec2234b4cd39daeecb720abdbfae9fcf6d9af578caa87e3e79a925d84b3fdde8d6532d7ed63bb96cb8d2769cbfb5580bcec6f6d0a20d09e270d4fed29dcfe0699b292092a30a19adb1c4eac49a7ef9094c978d2d8b43242a0fbfd0afe1b37d45cdb19b06828bd2fdab37db225d12b2d743cf4af32ec120ea681c5ee4777ea2f55a1e70042269dedf93ead047f99dd0114d42aa6d8d40e041a54ef4b7c57921288e30bbd69901cdf6fad15b475826e335c95af59f80e6a56b33173ed205a1b0e5e0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-blink">
+      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="请输入密码，查看文章。">请输入密码，查看文章。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+      
+       <hr><span style="font-style: italic;color: gray;"> 本博文只能阅读，谢绝转载，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2963033731@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>毕业五年的总结和思考20220718</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">10</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Soaring Lee">Soaring Lee</a></p>
+    <p><span class="copy-title">发布时间:</span>2022-07-18, 15:13:47</p>
+    <p><span class="copy-title">最后更新:</span>2022-07-19, 20:56:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2022/07/18/【Think系列】工作五年的总结和思考20220718/" title="毕业五年的总结和思考20220718">https://soaringleefighting.github.io/2022/07/18/【Think系列】工作五年的总结和思考20220718/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var title = location.pathname.substr(0, 50);  // 截取字符串
+		var gitalk = new Gitalk({
+            clientID: 'f2e004e5b913b17dac9c',
+            clientSecret: '69fbaf41dc2bfc5a180b1b36a88168c898a8c028',
+            repo: 'soaringleefighting.github.io',
+            owner: 'soaringleefighting',
+            admin: ['soaringleefighting'],
+            id: title,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry"><span class="miit">
+                <img src="/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a href="http://beian.miit.gov.cn/">飞翔的鲲 专属</a>
+        </span>
+    
+    ©2017-2022 SoaringLee
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("07/10/2019 21:46:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+		years = (now - grt ) / 1000 / 60 / 60 / 24/ 365; ynum = Math.floor(years);
+        days = (now - grt ) / 1000 / 60 / 60 / 24 - (365*ynum); dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * (dnum +365*ynum)); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * (dnum+365*ynum)) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * (dnum+365*ynum)) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 " + ynum+ " 年 " + dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.8},"react":{"opacity":0.7},"log":false});</script></body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 572px;
+    }
+    .nav.fullscreen {
+        margin-left: -572px;
+    }
+    .nav-left {
+        width: 150px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+<div id="musicMouseDrag" style="position:fixed; z-index: 9999; bottom: 0; right: 0;">
+    <div id="musicDragArea" style="position: absolute; top: 0; left: 0; width: 100%;height: 10px;cursor: move; z-index: 10;"></div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=425053743&auto=1&height=32"></iframe>
+</div>
+
+<!-- 以下代码是为了支持随时拖动音乐控件的位置，如没有需求，可去掉下面代码 -->
+<script>
+    var $DOC = $(document)
+    $('#musicMouseDrag').on ('mousedown', function (e) {
+      // 阻止文本选中
+      $DOC.bind ("selectstart", function () {
+        return false;
+      });
+      $('#musicDragArea').css ('height', '100%');
+      var $moveTarget = $('#musicMouseDrag');
+      $moveTarget.css ('border', '1px dashed grey')
+      var div_x = e.pageX - $moveTarget.offset ().left;
+      var div_y = e.pageY - $moveTarget.offset ().top;
+      $DOC.on ('mousemove', function (e) {
+        var targetX = e.pageX - div_x;
+        var targetY = e.pageY - div_y;
+        targetX = targetX < 0 ? 0 : (targetX + $moveTarget.outerWidth () >= window.innerWidth) ? window.innerWidth - $moveTarget.outerWidth () : targetX;
+        targetY = targetY < 0 ? 0 : (targetY + $moveTarget.outerHeight () >= window.innerHeight) ? window.innerHeight - $moveTarget.outerHeight () : targetY;
+        $moveTarget.css ({'left': targetX + 'px', 'top': targetY + 'px', 'bottom': 'inherit', 'right': 'inherit'})
+      }).on ('mouseup', function () {
+        $DOC.unbind ("selectstart");
+        $DOC.off ('mousemove')
+        $DOC.off ('mouseup')
+        $moveTarget.css ('border', 'none')
+        $('#musicDragArea').css ('height', '10px');
+      })
+    })
+</script>
+
+</html>
